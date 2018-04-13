@@ -11,15 +11,15 @@ demoApp.config(function($routeProvider) {
         })
 
         // route for the about page
-        .when('/about', {
-            templateUrl : 'pages/about.html',
-            controller  : 'aboutController'
+        .when('/import', {
+            templateUrl : 'pages/import.html',
+            controller  : 'importController'
         })
 
         // route for the contact page
-        .when('/contact', {
-            templateUrl : 'pages/contact.html',
-            controller  : 'contactController'
+        .when('/export', {
+            templateUrl : 'pages/export.html',
+            controller  : 'exportController'
         });
 });
 // create the controller and inject Angular's $scope
@@ -29,12 +29,12 @@ demoApp.controller('mainController', function($scope) {
     $scope.picture = 'assets/lion.jpg';
 });
 
-demoApp.controller('aboutController', function($scope) {
+demoApp.controller('importController', function($scope) {
     $scope.message = 'Look! I am an about page.';
     $scope.picture = 'assets/frog.jpg';
 });
 
-demoApp.controller('contactController', function($scope) {
+demoApp.controller('exportController', function($scope) {
     $scope.message = 'Contact us! JK. This is just a demo.';
     $scope.picture = 'assets/snowleopard.jpg';
 });

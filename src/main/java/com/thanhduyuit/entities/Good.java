@@ -1,9 +1,14 @@
 package com.thanhduyuit.entities;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(name = "Good")
 public class Good {
 	
 	@Id
@@ -14,7 +19,7 @@ public class Good {
 	
 	private String code;
 	
-	private GoodType type;
+//	private GoodType type;
 	
 	private String unit;
 	

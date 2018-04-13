@@ -1,0 +1,19 @@
+package com.thanhduyuit.entities;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+public class GoodType {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	private String typeName;
+	
+	private String code;
+	
+	private String decription;
+
+}

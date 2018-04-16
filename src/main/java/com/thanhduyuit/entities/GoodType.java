@@ -1,9 +1,13 @@
 package com.thanhduyuit.entities;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
@@ -20,6 +24,9 @@ public class GoodType {
 	private String code;
 	
 	private String decription;
+	
+	@OneToMany(mappedBy = "goodType", cascade = CascadeType.ALL)
+	private Set<Good> listGoods;
 
 	public long getId() {
 		return id;
@@ -59,5 +66,12 @@ public class GoodType {
 		this.code = code;
 		this.decription = decription;
 	}
+
+	public GoodType() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
 	
 }

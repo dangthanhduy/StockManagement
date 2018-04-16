@@ -1,9 +1,14 @@
 package com.thanhduyuit.entities;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -23,7 +28,18 @@ public class Good {
 	
 	private String unit;
 	
+	@ManyToOne
+    @JoinColumn(name = "good_type_id")
+	private GoodType goodType;
+	
+	@ManyToOne
+    @JoinColumn(name = "provider_id")
+	private Provider provider;
+	
 	private double pricePerUnit;
+	
+	@ManyToMany(mappedBy = "Receipt")
+	private Set<Receipt> listReceipt;
 
 	public long getId() {
 		return id;
@@ -73,14 +89,31 @@ public class Good {
 		this.pricePerUnit = pricePerUnit;
 	}
 
-	public Good(String name, String code, String type, String unit, double pricePerUnit) {
+
+	public Good() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public GoodType getGoodType() {
+		return goodType;
+	}
+
+	public void setGoodType(GoodType goodType) {
+		this.goodType = goodType;
+	}
+
+	public Good(String name, String code, String type, String unit, GoodType goodType, double pricePerUnit) {
 		super();
 		this.name = name;
 		this.code = code;
 		this.type = type;
 		this.unit = unit;
+		this.goodType = goodType;
 		this.pricePerUnit = pricePerUnit;
 	}
+	
+	
 	
 	
 }

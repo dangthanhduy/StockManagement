@@ -1,40 +1,84 @@
-<div class="wrapper">
-    <form id="login" method="GET">
-        <div class="input-group">
-            <label>Name</label>
-            <div class="form-line">
-                <input autocomplete="off" type="text" class="form-control" name="name" ng-model="name" autofocus>
-            </div>
-        </div>
-        <div class="input-group">
-            <label>Code</label>
-            <div class="form-line">
-                <input autocomplete="off" type="text" class="form-control" name="code" ng-model="code" autofocus>
-            </div>
-        </div>
-        <div class="input-group">
-            <label>Type</label>
-            <div class="form-line">
-                <input autocomplete="off" type="text" class="form-control" name="type" ng-model="type" autofocus>
-            </div>
-        </div>
-        <div class="input-group">
-            <label>Unit</label>
-            <div class="form-line">
-                <input autocomplete="off" type="text" class="form-control" name="unit" ng-model="unit" autofocus>
-            </div>
-        </div>
-        <div class="input-group">
-            <label>Price Per Unit</label>
-            <div class="form-line">
-                <input autocomplete="off" type="text" class="form-control" name="pricePerUnit" ng-model="pricePerUnit" autofocus>
-            </div>
-        </div>
-        <div class="row m-t-10">
-            <div class="col-xs-12">
-                <button class="btn btn-block button-default font-20 waves-effect" type="button" ng-click="submit()">SUBMIT</button>
-            </div>
-        </div>
-    </form>
-    {{data}}
+
+<div>
+	<div class="box col-sm-3">
+		<div class="box-header">
+			<h3 class="box-title">List all goods in stock</h3>
+			<div class="box-tools">
+				<div class="input-group input-group-sm" style="width: 150px;">
+					<input type="text" name="table_search"
+						class="form-control pull-right" placeholder="Search">
+
+					<div class="input-group-btn">
+						<button type="submit" class="btn btn-default">
+							<i class="fa fa-search"></i>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /.box-header -->
+		<div class="box-body table-responsive no-padding">
+			<table class="table table-hover">
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>code</th>
+					<th>Type</th>
+					<th>Unit</th>
+					<th>Quantily</th>
+					<th>Description</th>
+					<th>Action</th>
+				</tr>
+				<tr>
+					<td>183</td>
+					<td>Shirt</td>
+					<td>S01</td>
+					<td>Clothes</td>
+					<td>Cai</td>
+					<td>10</td>
+					<td>Description</td>
+					<td><span class="label label-success">Approved</span></td>
+				</tr>
+				<tr>
+					<td>183</td>
+					<td>Shirt</td>
+					<td>S01</td>
+					<td>Clothes</td>
+					<td>Cai</td>
+					<td>10</td>
+					<td>Description</td>
+					<td><span class="label label-success">Approved</span></td>
+				</tr>
+				<tr>
+					<td>183</td>
+					<td>Shirt</td>
+					<td>S01</td>
+					<td>Clothes</td>
+					<td>Cai</td>
+					<td>10</td>
+					<td>Description</td>
+					<td><span class="label label-success">Approved</span></td>
+				</tr>
+				<tr>
+					<td>183</td>
+					<td>Shirt</td>
+					<td>S01</td>
+					<td>Clothes</td>
+					<td>Cai</td>
+					<td>10</td>
+					<td>Description</td>
+					<td><span class="label label-success">Approved</span></td>
+				</tr>
+			</table>
+		</div>
+		<div class="box-footer">
+			<button type="submit" class="btn btn-default">Clear</button>
+			<button type="submit" class="btn btn-info pull-right"
+				ng-click="submit()">Create</button>
+		</div>
+		<!-- /.box-body -->
+	</div>
+	<!-- /.box -->
 </div>
+
+

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -21,11 +22,12 @@ public class User {
 
 	@NotNull
 	private String name;
+	
+	
+	@OneToOne(mappedBy = "account")
+	private Staff staff;
 
 	// Public methods
-
-	public User() {
-	}
 
 	public User(long id) {
 		this.id = id;
@@ -59,5 +61,28 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Staff getStaff() {
+		return staff;
+	}
+
+	public void setStaff(Staff staff) {
+		this.staff = staff;
+	}
+
+	public User(long id, String email, String name, Staff staff) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.name = name;
+		this.staff = staff;
+	}
+	
+	
 
 }

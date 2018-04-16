@@ -1,0 +1,40 @@
+package com.thanhduyuit.Controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.thanhduyuit.DAO.GoodDao;
+import com.thanhduyuit.DAO.GoodTypeDao;
+import com.thanhduyuit.entities.Good;
+import com.thanhduyuit.entities.GoodType;
+
+@Controller
+public class ExportController {
+
+	@Autowired
+	private GoodDao goodDao;
+	
+	@Autowired
+	private GoodTypeDao goodTypeDao;
+
+	@RequestMapping("/getallgoods")
+	@ResponseBody
+	public List<Good> getAllGood() throws Exception {
+		List<Good> response = new ArrayList<>();
+		response = (List<Good>) goodDao.findAll();
+		return response;
+	}
+	
+	@RequestMapping("/getallgoodtypes")
+	@ResponseBody
+	public List<GoodType> getAllGoodTypes() throws Exception {
+		List<GoodType> response = new ArrayList<>();
+		response = (List<GoodType>) goodTypeDao.findAll();
+		return response;
+	}
+}

@@ -35,7 +35,7 @@ demoApp.controller('exportController', function($scope) {
 });
 
 demoApp.controller('importController', function ($scope, $http) {
-    $scope.submit = function (name, type, code, unit, price) {
+    $scope.submit = function () {
         var  name = $scope.name;
         var  type = $scope.type;
         var  code = $scope.code;
@@ -49,9 +49,7 @@ demoApp.controller('importController', function ($scope, $http) {
                 console.log("Unable to perform get request");
             });
     };
-});
 
-demoApp.controller('importController', function ($scope, $http) {
     $scope.submitGoodType = function () {
         var  name = $scope.goodTypeName;
         var  code = $scope.goodTypeCode;
@@ -65,4 +63,13 @@ demoApp.controller('importController', function ($scope, $http) {
                 console.log("Unable to perform get request aaa");
             });
     };
+
+    // $scope.names = ["Emil", "Tobias", "Linus"];
+
+    $http.get('10.88.127.151:8080/getallgoodtypes')
+        .then(function successCallback(response){
+            $scope.nameItems = response;
+        }, function errorCallback(response){
+            alert("Error.....");
+        });
 });

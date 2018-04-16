@@ -21,4 +21,43 @@ public class GoodType {
 	
 	private String decription;
 
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getTypeName() {
+		return typeName;
+	}
+
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getDecription() {
+		return decription;
+	}
+
+	public void setDecription(String decription) {
+		this.decription = decription;
+	}
+
+	public GoodType(String typeName, String code, String decription) {
+		super();
+		this.typeName = typeName;
+		this.code = code;
+		this.decription = decription;
+	}
+	
 }

@@ -38,7 +38,7 @@ public class Good {
 	
 	private double pricePerUnit;
 	
-	@ManyToMany(mappedBy = "Receipt")
+	@ManyToMany(mappedBy = "listGoods")
 	private Set<Receipt> listReceipt;
 
 	public long getId() {
@@ -111,6 +111,22 @@ public class Good {
 		this.unit = unit;
 		this.goodType = goodType;
 		this.pricePerUnit = pricePerUnit;
+	}
+
+	public Provider getProvider() {
+		return provider;
+	}
+
+	public void setProvider(Provider provider) {
+		this.provider = provider;
+	}
+
+	public Set<Receipt> getListReceipt() {
+		return listReceipt;
+	}
+
+	public void setListReceipt(Set<Receipt> listReceipt) {
+		this.listReceipt = listReceipt;
 	}
 	
 	

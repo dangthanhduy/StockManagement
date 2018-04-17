@@ -21,6 +21,12 @@ demoApp.config(function($routeProvider) {
             templateUrl : 'pages/import.html',
             controller  : 'importController'
         });
+    
+//	     route for the contact page
+//	    .when('/mystock', {
+//	        templateUrl : 'pages/mystock.html',
+//	        controller  : 'mystockController'
+//	    });
 });
 // create the controller and inject Angular's $scope
 demoApp.controller('mainController', function($scope) {
@@ -66,9 +72,10 @@ demoApp.controller('importController', function ($scope, $http) {
 
     // $scope.names = ["Emil", "Tobias", "Linus"];
 
-    $http.get('10.88.127.151:8080/getallgoodtypes')
+    $http.get(`http://localhost:8080/getallgoodtypes`)
         .then(function successCallback(response){
-            $scope.nameItems = response;
+            $scope.nameItems = response.data;
+            console.log($scope.nameItems);
         }, function errorCallback(response){
             alert("Error.....");
         });

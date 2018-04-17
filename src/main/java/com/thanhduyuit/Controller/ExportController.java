@@ -2,6 +2,7 @@ package com.thanhduyuit.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import com.thanhduyuit.DAO.GoodDao;
 import com.thanhduyuit.DAO.GoodTypeDao;
 import com.thanhduyuit.entities.Good;
 import com.thanhduyuit.entities.GoodType;
+import com.thanhduyuit.entities.Receipt;
 
 @Controller
 public class ExportController {
@@ -36,5 +38,25 @@ public class ExportController {
 		List<GoodType> response = new ArrayList<>();
 		response = (List<GoodType>) goodTypeDao.findAll();
 		return response;
+	}
+	
+	@RequestMapping("/getgoodbyid")
+	@ResponseBody
+	public Good getGoodById(long goodId) throws Exception {
+		Good good  =  goodDao.findOne(goodId);
+		GoodType gt = goodTypeDao.findOne(1L);
+		if (good != null) return good;
+		else {
+			return new Good("name","code","type","unit",gt,1L);
+		}
+		
+	}
+	
+	
+	@RequestMapping("/getgoodbycreceipt")
+	@ResponseBody
+	public int getGoodByReceipt(long goodId) throws Exception {
+		Good good  =  goodDao.findOne(goodId);
+		return good.getListReceipt().size();
 	}
 }

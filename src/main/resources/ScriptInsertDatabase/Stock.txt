@@ -1,0 +1,17 @@
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 1', 'Etihad', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 2', 'Anfield', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 3', 'Ayresome Park', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 4', 'Baseball Ground', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 5', 'Bloomfield Road', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 6', 'Boleyn Ground', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 7', 'Carrow Road', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 8', 'Emirates', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 9', 'Filbert Street', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 10', 'Goodison Park', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 11', 'Liberty', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 12', 'Old Trafford', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Bình Thạnh', 'Stamford Bridge', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Gò Vấp', 'St Marys', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Phú Nhuận', 'Vicarage Road', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Tân Phú', 'White Hart Lane', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Thủ Đức', 'Villa Park', 'Available');

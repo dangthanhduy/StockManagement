@@ -40,23 +40,23 @@ public class ExportController {
 		return response;
 	}
 	
-	@RequestMapping("/getgoodbyid")
-	@ResponseBody
-	public Good getGoodById(long goodId) throws Exception {
-		Good good  =  goodDao.findOne(goodId);
-		GoodType gt = goodTypeDao.findOne(1L);
-		if (good != null) return good;
-		else {
-			return new Good("name","code","type","unit",gt,1L);
-		}
-		
-	}
+//	@RequestMapping("/getgoodbyid")
+//	@ResponseBody
+//	public Good getGoodById(long goodId) throws Exception {
+//		Good good  =  goodDao.findOne(goodId);
+//		GoodType gt = goodTypeDao.findOne(1L);
+//		if (good != null) return good;
+//		else {
+//			return new Good("name","code","type","unit",gt,1L);
+//		}
+//		
+//	}
+//	
 	
-	
-	@RequestMapping("/getgoodbycreceipt")
-	@ResponseBody
-	public int getGoodByReceipt(long goodId) throws Exception {
-		Good good  =  goodDao.findOne(goodId);
-		return good.getListReceipt().size();
-	}
+//	@RequestMapping("/getgoodbycreceipt")
+//	@ResponseBody
+//	public int getGoodByReceipt(long goodId) throws Exception {
+//		Good good  =  goodDao.findOne(goodId);
+//		return good.getListReceipt().size();
+//	}
 }

@@ -1,0 +1,10 @@
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('GD', 'Gia Dung', 'Gia Dụng');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('DT', 'Dien Tu', 'Điện Tử');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('QA', 'Quan Ao', 'Quần Áo');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('TD', 'Tieu Dung', 'Tiêu Dùng');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('NT', 'Noi That', 'Nội Thất');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('TT', 'Trang Tri', 'Trang Trí');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('TP', 'Thuc Pham', 'Thực Phẩm');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('MP', 'My Pham', 'Mỹ Phẩm');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('TS', 'Trang Suc', 'Trang Sức');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('DP', 'Duoc Pham', 'Dược phẩm');

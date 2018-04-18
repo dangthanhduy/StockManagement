@@ -35,18 +35,18 @@ public class UserController {
 	 * @return A string describing if the user is successfully created or not.
 	 */
 
-	@RequestMapping("/create")
-	@ResponseBody
-	public String create(String email, String name) {
-		User user = null;
-		try {
-			user = new User(email, name);
-			userDao.save(user);
-		} catch (Exception ex) {
-			return "Error creating the user: " + ex.toString();
-		}
-		return "User succesfully created! (id = " + user.getId() + ")";
-	}
+//	@RequestMapping("/create")
+//	@ResponseBody
+//	public String create(String email, String name) {
+//		User user = null;
+//		try {
+//			user = new User(email, name);
+//			userDao.save(user);
+//		} catch (Exception ex) {
+//			return "Error creating the user: " + ex.toString();
+//		}
+//		return "User succesfully created! (id = " + user.getId() + ")";
+//	}
 
 
 	/**
@@ -56,17 +56,17 @@ public class UserController {
 	 *            The id of the user to delete
 	 * @return A string describing if the user is successfully deleted or not.
 	 */
-	@RequestMapping("/delete")
-	@ResponseBody
-	public String delete(long id) {
-		try {
-			User user = new User(id);
-			userDao.delete(user);
-		} catch (Exception ex) {
-			return "Error deleting the user: " + ex.toString();
-		}
-		return "User successfully deleted!";
-	}
+//	@RequestMapping("/delete")
+//	@ResponseBody
+//	public String delete(long id) {
+//		try {
+//			User user = new User(id);
+//			userDao.delete(user);
+//		} catch (Exception ex) {
+//			return "Error deleting the user: " + ex.toString();
+//		}
+//		return "User successfully deleted!";
+//	}
 
 	/**
 	 * /get-by-email --> Return the id for the user having the passed email.

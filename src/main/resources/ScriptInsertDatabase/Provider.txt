@@ -1,0 +1,21 @@
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('USA', 'Description', '313125124124', 'Loris Karius', '5');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Japan', 'Description', '124124124', '	Emre Can', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Italy', 'Description', '214124124124', 'Andrew Robertson', '5');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Germany', 'Description', '124124124', 'Simon Mignolet', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('England', 'Description', '797896788667', 'Virgil van Dijk', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Australia', 'Description', '768678768678', 'Roberto Firmino', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('New Zealand', 'Description', '423412414312', 'James Milner', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Honolulu', 'Description', '21519-9051124', 'Mohamed Salah', '5');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('China', 'Description', '23556452341', 'Jordan Henderson', '1');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Taiwan', 'Description', '65745234324', 'Daniel Sturridge', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Laos', 'Description', '577423414', 'Marko Grujić', '1');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Combodia', 'Description', '2352365768', 'Ragnar Klavan', '2');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Thailands', 'Description', '546324253', 'Alberto Moreno', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Indonesia', 'Description', '2352354657679', 'Sadio Mané', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Philippines', 'Description', '769567345235', 'Adam Lallana', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Malaysia', 'Description', '233464363', 'Alex Oxlade-Chamberlain', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('France', 'Description', '64356756867', 'Danny Ings', '5');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Spain', 'Description', '854736235769856', 'Joël Matip', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Brazil', 'Description', '623523235235', 'Dominic Solanke', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Canada', 'Description', '23523523563', 'Harry Wilson', '5');
+

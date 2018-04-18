@@ -1,5 +1,7 @@
 package com.thanhduyuit.Controller;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,9 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thanhduyuit.DAO.GoodDao;
 import com.thanhduyuit.DAO.GoodTypeDao;
+import com.thanhduyuit.DAO.ProviderDao;
+import com.thanhduyuit.Modal.MessageResponse;
+import com.thanhduyuit.Service.ImportService;
 import com.thanhduyuit.Service.Message;
 import com.thanhduyuit.entities.Good;
 import com.thanhduyuit.entities.GoodType;
+import com.thanhduyuit.entities.Provider;
+import com.thanhduyuit.entities.Stock;
 
 @Controller
 public class ImportController {
@@ -19,26 +26,22 @@ public class ImportController {
 	private GoodDao goodDao;
 	
 	@Autowired
+	private ProviderDao providerDao;
+	
+	@Autowired
 	private GoodTypeDao goodTypeDao;
+	
+	@Autowired
+	private ImportService importer;
 	
 	@RequestMapping("/createGood")
 	@ResponseBody
-	public String createGood(String name, String type, String code, String unit, String price) throws Exception {
-		if (name.equalsIgnoreCase("undefined") || type.equalsIgnoreCase("undefined")
-				|| code.equalsIgnoreCase("undefined") || unit.equalsIgnoreCase("undefined")
-				|| price.equalsIgnoreCase("undefined")) {
-			throw new Exception("Invalid data");
-		}
-		Good good = null;
-		double priceDouble = Double.parseDouble(price);
-		GoodType goodType = new GoodType();
-		goodType = goodTypeDao.findOne(1L);
-		try {
-			good = new Good(name, type, code, unit, goodType, priceDouble);
-			goodDao.save(good);
-		} catch (Exception ex) {
-			return "Error creating the user: " + ex.toString();
-		}
+	public MessageResponse createGood(String name, String code, String type, String unit, String imagePath, double quantity,
+			String importPrice, String exportPrice, String goodTypeID, String providerID) throws Exception {
+		
+		
+		importer.createGood(name, code, type, unit, imagePath, quantity, importPrice, exportPrice, goodTypeID, providerID);
+		
 		return "User succesfully created! (id = " + good.getId() + ")";
 	}
 

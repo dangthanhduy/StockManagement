@@ -11,35 +11,89 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "Good")
 public class Good {
-	
+
+	// *** CLASS VARIABLE ****//
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	
+
 	private String name;
-	
+
 	private String code;
-	
+
 	private String type;
-	
+
 	private String unit;
-	
+
+	private String imagePath;
+
+	private double quantity;
+
+	private double importPrice;
+
+	private double exportPrice;
+
 	@ManyToOne
-    @JoinColumn(name = "good_type_id")
+	@JoinColumn(name = "good_type_id")
 	private GoodType goodType;
-	
+
 	@ManyToOne
-    @JoinColumn(name = "provider_id")
+	@JoinColumn(name = "provider_id")
 	private Provider provider;
-	
-	private double pricePerUnit;
-	
-	@ManyToMany(mappedBy = "listGoods")
-	private Set<Receipt> listReceipt;
+
+	@ManyToMany(mappedBy = "listGoodOfStock")
+	private Set<Stock> listStock;
+
+	// *** METHOD CONTRUCTOR AND GETTER- SETTER ****//
+
+	public Good() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Good(String name, String code, String type, String unit, String imagePath, double quantity,
+			double importPrice, double exportPrice, GoodType goodType, Provider provider, Set<Stock> listStock) {
+		super();
+		this.name = name;
+		this.code = code;
+		this.type = type;
+		this.unit = unit;
+		this.imagePath = imagePath;
+		this.quantity = quantity;
+		this.importPrice = importPrice;
+		this.exportPrice = exportPrice;
+		this.goodType = goodType;
+		this.provider = provider;
+		this.listStock = listStock;
+	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
+	public double getImportPrice() {
+		return importPrice;
+	}
+
+	public void setImportPrice(double importPrice) {
+		this.importPrice = importPrice;
+	}
+
+	public double getExportPrice() {
+		return exportPrice;
+	}
+
+	public void setExportPrice(double exportPrice) {
+		this.exportPrice = exportPrice;
+	}
 
 	public long getId() {
 		return id;
@@ -81,36 +135,12 @@ public class Good {
 		this.unit = unit;
 	}
 
-	public double getPricePerUnit() {
-		return pricePerUnit;
-	}
-
-	public void setPricePerUnit(double pricePerUnit) {
-		this.pricePerUnit = pricePerUnit;
-	}
-
-
-	public Good() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	public GoodType getGoodType() {
 		return goodType;
 	}
 
 	public void setGoodType(GoodType goodType) {
 		this.goodType = goodType;
-	}
-
-	public Good(String name, String code, String type, String unit, GoodType goodType, double pricePerUnit) {
-		super();
-		this.name = name;
-		this.code = code;
-		this.type = type;
-		this.unit = unit;
-		this.goodType = goodType;
-		this.pricePerUnit = pricePerUnit;
 	}
 
 	public Provider getProvider() {
@@ -121,15 +151,20 @@ public class Good {
 		this.provider = provider;
 	}
 
-	public Set<Receipt> getListReceipt() {
-		return listReceipt;
+	public double getQuantity() {
+		return quantity;
 	}
 
-	public void setListReceipt(Set<Receipt> listReceipt) {
-		this.listReceipt = listReceipt;
+	public void setQuantity(double quantity) {
+		this.quantity = quantity;
 	}
-	
-	
-	
-	
+
+	public Set<Stock> getListStock() {
+		return listStock;
+	}
+
+	public void setListStock(Set<Stock> listStock) {
+		this.listStock = listStock;
+	}
+
 }

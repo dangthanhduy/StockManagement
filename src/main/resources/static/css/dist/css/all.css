@@ -18,3 +18,31 @@
   background-color: #efefef;
   text-align: center;
 }
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+}
+table tr:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.search {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.box-title {
+    color: #152473;
+}
+
+.footer-button {
+    margin-top: 112px;
+}
+
+label {
+    color: #00ca66;
+}

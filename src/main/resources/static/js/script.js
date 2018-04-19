@@ -20,13 +20,13 @@ demoApp.config(function($routeProvider) {
         .when('/import', {
             templateUrl : 'pages/import.html',
             controller  : 'importController'
-        });
+        })
     
-//	     route for the contact page
-//	    .when('/mystock', {
-//	        templateUrl : 'pages/mystock.html',
-//	        controller  : 'mystockController'
-//	    });
+	     // route for the contact page
+	    .when('/mystock', {
+	        templateUrl : 'pages/mystock.html',
+	        controller  : 'mystockController'
+	    });
 });
 // create the controller and inject Angular's $scope
 demoApp.controller('mainController', function($scope) {
@@ -35,9 +35,17 @@ demoApp.controller('mainController', function($scope) {
     $scope.picture = 'assets/lion.jpg';
 });
 
-demoApp.controller('exportController', function($scope) {
-    $scope.message = 'Look! I am an about page.';
-    $scope.picture = 'assets/frog.jpg';
+demoApp.controller('exportController', function($scope, $http) {
+
+    $http.get(`http://localhost:8080/getAllGood`)
+        .then(function successCallback(response){
+            alert("Successfull export .....");
+            $scope.getAllGoods = response.data.contents;
+            console.log(response);
+        }, function errorCallback(response){
+            alert("error export 1111......");
+            console.log("Unable to perform get request export");
+            });
 });
 
 demoApp.controller('importController', function ($scope, $http) {
@@ -70,8 +78,6 @@ demoApp.controller('importController', function ($scope, $http) {
             });
     };
 
-    // $scope.names = ["Emil", "Tobias", "Linus"];
-
     $http.get(`http://localhost:8080/getallgoodtypes`)
         .then(function successCallback(response){
             $scope.nameItems = response.data;
@@ -79,4 +85,11 @@ demoApp.controller('importController', function ($scope, $http) {
         }, function errorCallback(response){
             alert("Error.....");
         });
+
+
+});
+
+demoApp.controller('mystockController', function($scope) {
+    $scope.message = 'Everyone come and see how good I look!';
+    $scope.picture = 'assets/frog.jpg';
 });

@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.thanhduyuit.DAO.GoodDao;
 import com.thanhduyuit.DAO.GoodTypeDao;
 import com.thanhduyuit.DAO.UserDao;
-import com.thanhduyuit.Service.Message;
 import com.thanhduyuit.entities.Good;
 import com.thanhduyuit.entities.GoodType;
 import com.thanhduyuit.entities.User;

@@ -3,18 +3,18 @@ package com.thanhduyuit.Modal;
 import java.util.List;
 
 public class MessageResponse {
-	
+
 	private String message;
-	
+
 	private long statuscode;
-	
-	private List<Object> listOjects;
-	
-	public MessageResponse(String message, long statuscode, List<Object> listOjects) {
+
+	private String contents;
+
+	public MessageResponse(String message, long statuscode, String listOjects) {
 		super();
 		this.message = message;
 		this.statuscode = statuscode;
-		this.listOjects = listOjects;
+		this.contents = listOjects;
 	}
 
 	public MessageResponse() {
@@ -38,12 +38,12 @@ public class MessageResponse {
 		this.statuscode = statuscode;
 	}
 
-	public List<Object> getListOjects() {
-		return listOjects;
+	public String getContents() {
+		return contents;
 	}
 
-	public void setListOjects(List<Object> listOjects) {
-		this.listOjects = listOjects;
+	public void setContents(String contents) {
+		this.contents = contents;
 	}
-	
+
 }

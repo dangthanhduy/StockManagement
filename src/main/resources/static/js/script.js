@@ -37,13 +37,13 @@ demoApp.controller('mainController', function($scope) {
 
 demoApp.controller('exportController', function($scope, $http) {
 
-    $http.get(`http://localhost:8080/getAllGood`)
+    $http.get(`http://localhost:8080/getAllGoods`)
         .then(function successCallback(response){
             alert("Successfull export .....");
-            $scope.getAllGoods = response.data.contents;
+            $scope.getAllGoods = response.data.listgoods;
             console.log(response);
         }, function errorCallback(response){
-            alert("error export 1111......");
+            alert("error export ......");
             console.log("Unable to perform get request export");
             });
 });

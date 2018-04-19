@@ -1,6 +1,5 @@
 package com.thanhduyuit.Modal;
 
-import java.util.List;
 
 public class MessageResponse {
 
@@ -8,13 +7,11 @@ public class MessageResponse {
 
 	private long statuscode;
 
-	private String contents;
 
-	public MessageResponse(String message, long statuscode, String listOjects) {
+	public MessageResponse(String message, long statuscode) {
 		super();
 		this.message = message;
 		this.statuscode = statuscode;
-		this.contents = listOjects;
 	}
 
 	public MessageResponse() {
@@ -36,14 +33,6 @@ public class MessageResponse {
 
 	public void setStatuscode(long statuscode) {
 		this.statuscode = statuscode;
-	}
-
-	public String getContents() {
-		return contents;
-	}
-
-	public void setContents(String contents) {
-		this.contents = contents;
 	}
 
 }

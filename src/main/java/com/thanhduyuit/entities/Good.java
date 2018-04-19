@@ -11,6 +11,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "Good")
 public class Good {
@@ -39,13 +41,16 @@ public class Good {
 
 	@ManyToOne
 	@JoinColumn(name = "good_type_id")
+	@JsonIgnore
 	private GoodType goodType;
 
 	@ManyToOne
 	@JoinColumn(name = "provider_id")
+	@JsonIgnore
 	private Provider provider;
 
 	@ManyToMany(mappedBy = "listGoodOfStock")
+	@JsonIgnore
 	private Set<Stock> listStock;
 
 	// *** METHOD CONTRUCTOR AND GETTER- SETTER ****//

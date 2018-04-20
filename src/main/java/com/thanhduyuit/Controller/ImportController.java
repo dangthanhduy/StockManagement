@@ -1,30 +1,30 @@
 package com.thanhduyuit.Controller;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.google.gson.Gson;
-import com.thanhduyuit.DAO.GoodTypeDao;
-import com.thanhduyuit.DAO.ProviderDao;
-import com.thanhduyuit.Modal.MessageResponse;
+import com.thanhduyuit.GetClientIpInfo;
+import com.thanhduyuit.Modal.GoodStandardResponse;
 import com.thanhduyuit.Service.ImportService;
 import com.thanhduyuit.Service.ResponseBuilder;
-import com.thanhduyuit.entities.Good;
 
 @Controller
+@RequestMapping("/import")
 public class ImportController {
 	
+	private static final Log log = LogFactory.getLog(ImportController.class);
 	
-	@Autowired
-	private ProviderDao providerDao;
-	
-	@Autowired
-	private GoodTypeDao goodTypeDao;
+	private static final String X_FORWARDED_FOR  = "X-FORWARDED-FOR";
 	
 	@Autowired
 	private ImportService importer;
@@ -32,35 +32,17 @@ public class ImportController {
 	@Autowired
 	private ResponseBuilder responseRuilder;
 	
-	@RequestMapping("/getAllGood")
+	@RequestMapping("/getallgood")
 	@ResponseBody
-	public MessageResponse getAllGoods() throws Exception {
-		Gson gson = new Gson();
-		List<Good> response = new ArrayList<>();
-		response = importer.getAllGoods();
-		String json = gson.toJson(response.get(0));
-		return responseRuilder.createGoodBuilder(json);
+	public GoodStandardResponse getAllGood(HttpServletRequest request, String stockID) throws Exception {
+		
+		//Log client info
+		log.info("Reuqest '/getAllGoods' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+		
+		GoodStandardResponse response = new GoodStandardResponse();
+		response = responseRuilder.getAllGoodBuilder(importer.getAllGoods());
+		return response;
 	}
 
-
-//	@RequestMapping("/getAllGood")
-//	@ResponseBody
-//	public MessageResponse createGoodType(String name, String code, String description) throws Exception {
-//		if (name.equalsIgnoreCase("undefined") || code.equalsIgnoreCase("undefined")
-//				|| description.equalsIgnoreCase("undefined")) {
-//			throw new Exception("Invalid data");
-//		}
-//		GoodType goodType = null;
-//		Message message= null;
-//		try {
-//			goodType = new GoodType(name, code, description);
-//			goodTypeDao.save(goodType);
-//			
-//			message = new Message("401", "Failed");
-//		} catch (Exception ex) {
-//			return null;
-//		}
-//		System.out.println("GoodType succesfully created! (id = " + goodType.getId() + ")"); 
-//		return message;
-//	}
 }

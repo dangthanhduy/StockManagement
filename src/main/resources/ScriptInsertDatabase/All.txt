@@ -1,0 +1,105 @@
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('bravo@gmail.com', 'Claudio Bravo', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('ederson@gmail.com', 'Ederson Moraes', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('walker@gmail.com', 'Kyle Walker', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('danilo@gmail.com', 'Danilo', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('kompany@gmail.com', 'Vincent Kompany', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('stones@gmail.com', 'John Stones', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('sterling@gmail.com', 'Raheem Sterling', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('gundogan@gmail.com', 'Ilkay Gundogan', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('aguero@gmail.com', 'Sergio Agüero', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('mangala@gmail.com', 'Eliaquim Mangala', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('kevindebruyne@gmail.com', 'Kevin De Bruyne', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('delph@gmail.com', 'Fabian Delph', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('sane@gmail.com', 'Leroy Sané', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('silva@gmail.com', 'Bernardo Silva', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('davidsilva@gmail.com', 'David Silva', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('mendy@gmail.com', 'Benjamin Mendy', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('fernandinho@gmail.com', 'Fernandinho', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('otamendi@gmail.com', 'Nicolás Otamendi', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('jesus@gmail.com', 'Gabriel Jesus', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('zinchenko@gmail.com', 'Oleksandr Zinchenko', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('toure@gmail.com', 'Yaya Touré', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('adarabioyo@gmail.com', 'Tosin Adarabioyo', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('foden@gmail.com', 'Phil Foden', '12345678');
+INSERT INTO `stockmanagement`.`users` (`email`, `name`, `pasword`) VALUES ('diaz@gmail.com', 'Brahim Díaz', '12345678');
+
+
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 1', 'Etihad', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 2', 'Anfield', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 3', 'Ayresome Park', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 4', 'Baseball Ground', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 5', 'Bloomfield Road', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 6', 'Boleyn Ground', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 7', 'Carrow Road', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 8', 'Emirates', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 9', 'Filbert Street', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 10', 'Goodison Park', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 11', 'Liberty', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Quân 12', 'Old Trafford', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Bình Thạnh', 'Stamford Bridge', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Gò Vấp', 'St Marys', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Phú Nhuận', 'Vicarage Road', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Tân Phú', 'White Hart Lane', 'Available');
+INSERT INTO `stockmanagement`.`stock` (`address`, `name`, `status`) VALUES ('Thủ Đức', 'Villa Park', 'Available');
+
+
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('USA', 'Description', '313125124124', 'Loris Karius', '5');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Japan', 'Description', '124124124', '	Emre Can', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Italy', 'Description', '214124124124', 'Andrew Robertson', '5');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Germany', 'Description', '124124124', 'Simon Mignolet', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('England', 'Description', '797896788667', 'Virgil van Dijk', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Australia', 'Description', '768678768678', 'Roberto Firmino', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('New Zealand', 'Description', '423412414312', 'James Milner', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Honolulu', 'Description', '21519-9051124', 'Mohamed Salah', '5');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('China', 'Description', '23556452341', 'Jordan Henderson', '1');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Taiwan', 'Description', '65745234324', 'Daniel Sturridge', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Laos', 'Description', '577423414', 'Marko Grujić', '1');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Combodia', 'Description', '2352365768', 'Ragnar Klavan', '2');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Thailands', 'Description', '546324253', 'Alberto Moreno', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Indonesia', 'Description', '2352354657679', 'Sadio Mané', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Philippines', 'Description', '769567345235', 'Adam Lallana', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Malaysia', 'Description', '233464363', 'Alex Oxlade-Chamberlain', '3');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('France', 'Description', '64356756867', 'Danny Ings', '5');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Spain', 'Description', '854736235769856', 'Joël Matip', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Brazil', 'Description', '623523235235', 'Dominic Solanke', '4');
+INSERT INTO `stockmanagement`.`provider` (`address`, `decription`, `phone_number`, `provider_name`, `vote`) VALUES ('Canada', 'Description', '23523523563', 'Harry Wilson', '5');
+
+
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'David Silva', '091900000', 'Marketing', 'Manager', '16', '1');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Claudio Bravo', '0919111111', 'Saler', 'Employee', '2', '2');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Ederson Moraes', '12131232132', 'Marketing', 'Employee', '3', '2');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Kyle Walker', '0912812322', 'Marketing', 'Employee', '4', '3');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Danilo', '09122121083', 'Marketing', 'Employee', '5', '3');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Vincent Kompany', '018273921837', 'Saler', 'Manager', '6', '3');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'John Stones', '8012678213', 'Saler', 'Manager', '7', '4');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Raheem Sterling', '98548572894', 'Saler', 'Manager', '8', '4');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Ilkay Gundogan', '109238120322', 'CEO', 'Manager', '9', '5');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Sergio Agüero', '12831293212', 'Human Resource', 'Manager', '10', '5');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Eliaquim Mangala', '12412214214', 'Marketing', 'Employee', '11', '6');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Kevin De Bruyne', '124124125412', 'Saler', 'Employee', '12', '7');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Fabian Delph', '57678987978', 'Saler', 'Employee', '13', '7');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Leroy Sané', '1242546757', 'Saler', 'Manager', '14', '7');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Bernardo Silva', '5675324213', 'Marketing', 'Employee', '15', '8');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Benjamin Mendy', '2134465757', 'Human Resource', 'Employee', '17', '8');
+INSERT INTO `stockmanagement`.`staffs` (`birthday`, `description`, `full_name`, `phone_number`, `staff_group`, `staff_role`, `user_id`, `stock_id`) VALUES ('1995-08-15', 'Decription', 'Fernandinho', '4653542342423', 'Marketing', 'Employee', '18', '9');
+
+
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('GD', 'Gia Dung', 'Gia Dụng');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('DT', 'Dien Tu', 'Điện Tử');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('QA', 'Quan Ao', 'Quần Áo');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('TD', 'Tieu Dung', 'Tiêu Dùng');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('NT', 'Noi That', 'Nội Thất');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('TT', 'Trang Tri', 'Trang Trí');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('TP', 'Thuc Pham', 'Thực Phẩm');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('MP', 'My Pham', 'Mỹ Phẩm');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('TS', 'Trang Suc', 'Trang Sức');
+INSERT INTO `stockmanagement`.`good_type` (`code`, `decription`, `type_name`) VALUES ('DP', 'Duoc Pham', 'Dược phẩm');
+
+
+INSERT INTO `stockmanagement`.`good` (`code`, `export_price`, `image_path`, `import_price`, `name`, `quantity`, `type`, `unit`, `good_type_id`, `provider_id`) VALUES ('Laptop', '15000000', 'null', '10000000', 'Dell', '45', 'Máy Tính Xách Tay', 'Cái', '2', '1');
+INSERT INTO `stockmanagement`.`good` (`code`, `export_price`, `image_path`, `import_price`, `name`, `quantity`, `type`, `unit`, `good_type_id`, `provider_id`) VALUES ('Laptop', '15000000', 'null', '10000000', 'Macbook Pro', '20', 'Máy Tính Xách Tay', 'Cái', '2', '1');
+INSERT INTO `stockmanagement`.`good` (`code`, `export_price`, `image_path`, `import_price`, `name`, `quantity`, `type`, `unit`, `good_type_id`, `provider_id`) VALUES ('Laptop', '15000000', 'null', '10000000', 'HP', '37', 'Máy Tính Xách Tay', 'Cái', '2', '1');
+INSERT INTO `stockmanagement`.`good` (`code`, `export_price`, `image_path`, `import_price`, `name`, `quantity`, `type`, `unit`, `good_type_id`, `provider_id`) VALUES ('Laptop', '15000000', 'null', '10000000', 'Samsung', '59', 'Máy Tính Xách Tay', 'Cái', '2', '1');
+INSERT INTO `stockmanagement`.`good` (`code`, `export_price`, `image_path`, `import_price`, `name`, `quantity`, `type`, `unit`, `good_type_id`, `provider_id`) VALUES ('Laptop', '15000000', 'null', '10000000', 'Lenovo', '80', 'Máy Tính Xách Tay', 'Cái', '2', '1');
+INSERT INTO `stockmanagement`.`good` (`code`, `export_price`, `image_path`, `import_price`, `name`, `quantity`, `type`, `unit`, `good_type_id`, `provider_id`) VALUES ('Laptop', '15000000', 'null', '10000000', 'Asus Basic', '100', 'Máy Tính Xách Tay', 'Cái', '2', '1');
+

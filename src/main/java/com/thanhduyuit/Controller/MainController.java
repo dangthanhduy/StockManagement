@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thanhduyuit.GetClientIpInfo;
 import com.thanhduyuit.Modal.GoodStandardResponse;
+import com.thanhduyuit.Modal.GoodTypeListNameResponse;
+import com.thanhduyuit.Modal.GoodTypeResponse;
 import com.thanhduyuit.Service.ImportService;
 import com.thanhduyuit.Service.ResponseBuilder;
 
@@ -37,7 +39,38 @@ private static final Log log = LogFactory.getLog(ImportController.class);
 		GetClientIpInfo.getClientInfo(request);
 		log.info("--------------------------------------------------");
 		GoodStandardResponse response = new GoodStandardResponse();
-		response = responseRuilder.getAllGood(importer.getAllGoods());
+		response = responseRuilder.getAllGoodBuilder(importer.getAllGoods());
+		return response;
+	}
+	
+	
+	@RequestMapping("/getallgoodtype")
+	@ResponseBody
+	public GoodTypeResponse getAllGoodType(HttpServletRequest request, String stockID) throws Exception {
+		
+		//Log client info
+		log.info("------------------Main controller");
+		log.info("Reuqest '/getallgoodtype' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+		log.info("--------------------------------------------------");
+		
+		GoodTypeResponse response = new GoodTypeResponse();
+		response = responseRuilder.getAllGoodTypeObjectBuilder(importer.getAllGoodType());
+		return response;
+	}
+	
+	@RequestMapping("/getallgoodtypeasname")
+	@ResponseBody
+	public GoodTypeListNameResponse getAllGoodTypeAsName(HttpServletRequest request, String stockID) throws Exception {
+		
+		//Log client info
+		log.info("------------------Main controller");
+		log.info("Reuqest '/getallgoodtype' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+		log.info("--------------------------------------------------");
+		
+		GoodTypeListNameResponse response = new GoodTypeListNameResponse();
+		response = responseRuilder.getAllGoodTypeAsNameBuilder(importer.getAllGoodType());
 		return response;
 	}
 

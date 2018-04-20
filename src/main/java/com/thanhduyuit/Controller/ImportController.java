@@ -41,7 +41,7 @@ public class ImportController {
 		GetClientIpInfo.getClientInfo(request);
 		
 		GoodStandardResponse response = new GoodStandardResponse();
-		response = responseRuilder.getAllGood(importer.getAllGoods());
+		response = responseRuilder.getAllGoodBuilder(importer.getAllGoods());
 		return response;
 	}
 

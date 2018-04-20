@@ -32,7 +32,7 @@ table tr:nth-child(even) {
 
 .search {
     margin-bottom: 20px;
-    width: 100%;
+    width: 50%;
 }
 
 .box-title {
@@ -45,4 +45,27 @@ table tr:nth-child(even) {
 
 label {
     color: #00ca66;
+}
+
+.btn-createnewgood {
+    margin-bottom: 10px;
+    float: right;
+    margin-top: -55px;
+}
+
+.main-footer {
+    border-top: 20px solid white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding-top: 2em;
+    background-color: #686868;
+    color: white;
+    padding-bottom: 2em;
+}
+
+.footer-content {
+    margin-left: 20px;
 }

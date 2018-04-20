@@ -1,0 +1,1 @@
+var appPages = angular.module('app.pages', []);

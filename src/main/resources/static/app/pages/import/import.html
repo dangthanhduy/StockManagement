@@ -22,58 +22,24 @@
 			<tr>
 				<th>ID</th>
 				<th>Name</th>
-				<th>Code</th>
+				<th>code</th>
 				<th>Type</th>
 				<th>Unit</th>
+				<th>Image Path</th>
 				<th>Quantity</th>
-				<th>Description</th>
-				<th>Action</th>
+				<th>Import Price</th>
+				<th>Export Price</th>
 			</tr>
-			<tr>
-				<td>183</td>
-				<td>
-					<!--<select ng-model="selectedName" ng-options="x.typeName for x in nameItems"/>-->
-				</td>
-				<td>
-					<!--<select ng-model="selected" ng-options="x.code for x in nameItems"/>-->
-				</td>
-				<td>Clothes</td>
-				<td>Cai</td>
-				<td>10</td>
-				<td>
-					<!--<select ng-model="selected" ng-options="x.decription for x in nameItems"/>-->
-				</td>
-				<td><span class="label label-success">Approved</span></td>
-			</tr>
-			<tr>
-				<td>183</td>
-				<td>Shirt</td>
-				<td>S01</td>
-				<td>Clothes</td>
-				<td>Cai</td>
-				<td>10</td>
-				<td>Description</td>
-				<td><span class="label label-success">Approved</span></td>
-			</tr>
-			<tr>
-				<td>183</td>
-				<td>Shirt</td>
-				<td>S01</td>
-				<td>Clothes</td>
-				<td>Cai</td>
-				<td>10</td>
-				<td>Description</td>
-				<td><span class="label label-success">Approved</span></td>
-			</tr>
-			<tr>
-				<td>183</td>
-				<td>Shirt</td>
-				<td>S01</td>
-				<td>Clothes</td>
-				<td>Cai</td>
-				<td>10</td>
-				<td>Description</td>
-				<td><span class="label label-success">Approved</span></td>
+			<tr ng-repeat="x in getAllGoodsImportPage">
+				<td>{{ x.id}}</td>
+				<td>{{ x.name }}</td>
+				<td>{{ x.code }}</td>
+				<td>{{ x.type }}</td>
+				<td>{{ x.unit }}</td>
+				<td>{{ x.imagePath }}</td>
+				<td>{{ x.quantity }}</td>
+				<td>{{ x.importPrice }}</td>
+				<td>{{ x.exportPrice }}</td>
 			</tr>
 		</table>
 	</div>

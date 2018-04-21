@@ -6,11 +6,16 @@ function popupService($mdDialog) {
     var service = {};
 
     service.openCreateNewGoodPopup = openCreateNewGoodPopup;
-
+    service.openExportGoodPopup = openExportGoodPopup;
     return service;
 
     function openCreateNewGoodPopup() {
         var template = '<create-new-good></create-new-good>';
+        createPopup(template);
+    }
+    
+    function openExportGoodPopup() {
+        var template = '<export-good></export-good>';
         createPopup(template);
     }
 

@@ -14,6 +14,9 @@
 			</div>
 		</div>
 	</div>
+	<div class="btn-createnewgood">
+        <button type="submit" class="btn btn-info" ng-click="exportGood()">Export good</button>
+    </div>
 	<div class="box-body table-responsive no-padding">
 		<table class="table table-hover">
 			<tr>
@@ -39,11 +42,6 @@
 				<td>{{ x.exportPrice }}</td>
 			</tr>
 		</table>
-	</div>
-	<div class="box-footer">
-		<button type="submit" class="btn btn-default">Clear</button>
-		<button type="submit" class="btn btn-info pull-right"
-			ng-click="submit()">Create</button>
 	</div>
 </div>
 

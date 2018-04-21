@@ -1,12 +1,21 @@
-appPages.controller('exportController', function($scope, $http) {
+appPages.controller('exportController', function($scope, $http, popupService) {
 
-    $http.get(`http://332170eb.ngrok.io/getallgoods`)
+	
+	//Export Good button click
+	  $scope.exportGood = function(){
+	        popupService.openExportGoodPopup();
+	    };
+
+	
+	
+	
+	//Get all good load into table
+    $http.get(`http://localhost:8080/getallgoods`)
         .then(function successCallback(response){
-            alert("Successfull export .....");
             $scope.getAllGoods = response.data.listgoods;
             console.log(response);
         }, function errorCallback(response){
-            alert("error export 1111......");
+            alert("Cannot get all goods......");
             console.log("Unable to perform get request export");
         });
 

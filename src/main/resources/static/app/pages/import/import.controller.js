@@ -40,5 +40,15 @@ appPages.controller('importController', function ($scope, $http, popupService) {
         popupService.openCreateNewGoodPopup();
     };
 
+    
+    //Get All goods and fill into table
+    $http.get(`http://localhost:8080/getallgoods`)
+    .then(function successCallback(response){
+        $scope.getAllGoodsImportPage = response.data.listgoods;
+        console.log(response);
+    }, function errorCallback(response){
+        alert("Cannot get all goods......");
+        console.log("Unable to perform get request export");
+    });
 
 });

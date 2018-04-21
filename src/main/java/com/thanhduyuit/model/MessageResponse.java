@@ -1,4 +1,4 @@
-package com.thanhduyuit.Modal;
+package com.thanhduyuit.model;
 
 
 public class MessageResponse {

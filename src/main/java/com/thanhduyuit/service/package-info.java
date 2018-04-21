@@ -5,4 +5,4 @@
  * @author DuyDT2
  *
  */
-package com.thanhduyuit.Service;
+package com.thanhduyuit.service;

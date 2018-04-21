@@ -1,4 +1,4 @@
-package com.thanhduyuit.Controller;
+package com.thanhduyuit.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.thanhduyuit.DAO.GoodDao;
-import com.thanhduyuit.DAO.GoodTypeDao;
-import com.thanhduyuit.DAO.UserDao;
+import com.thanhduyuit.dao.GoodDao;
+import com.thanhduyuit.dao.GoodTypeDao;
+import com.thanhduyuit.dao.UserDao;
 import com.thanhduyuit.entities.Good;
 import com.thanhduyuit.entities.GoodType;
 import com.thanhduyuit.entities.User;
@@ -36,7 +36,7 @@ public class UserController {
 
 //	@RequestMapping("/create")
 //	@ResponseBody
-//	public String create(String email, String name) {
+//	public String create(User user) {
 //		User user = null;
 //		try {
 //			user = new User(email, name);

@@ -1,4 +1,4 @@
-package com.thanhduyuit.Controller;
+package com.thanhduyuit.controller;
 
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thanhduyuit.GetClientIpInfo;
-import com.thanhduyuit.Modal.GoodStandardResponse;
-import com.thanhduyuit.Service.ImportService;
-import com.thanhduyuit.Service.ResponseBuilder;
+import com.thanhduyuit.model.GoodModelCreate;
+import com.thanhduyuit.model.GoodStandardResponse;
+import com.thanhduyuit.service.ImportService;
+import com.thanhduyuit.service.ResponseBuilder;
 
 @Controller
 @RequestMapping("/import")
@@ -37,7 +38,20 @@ public class ImportController {
 	public GoodStandardResponse getAllGood(HttpServletRequest request, String stockID) throws Exception {
 		
 		//Log client info
-		log.info("Reuqest '/getAllGoods' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		log.info("Reuqest '/getallgood' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+		
+		GoodStandardResponse response = new GoodStandardResponse();
+		response = responseRuilder.getAllGoodBuilder(importer.getAllGoods());
+		return response;
+	}
+	
+	@RequestMapping("/createnewgood")
+	@ResponseBody
+	public GoodStandardResponse createNewGood(HttpServletRequest request, GoodModelCreate goodModal) throws Exception {
+		
+		//Log client info
+		log.info("Reuqest '/createnewgood' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
 		GetClientIpInfo.getClientInfo(request);
 		
 		GoodStandardResponse response = new GoodStandardResponse();

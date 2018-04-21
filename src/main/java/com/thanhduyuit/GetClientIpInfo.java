@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.thanhduyuit.Controller.ImportController;
+import com.thanhduyuit.controller.ImportController;
 
 public class GetClientIpInfo {
 	private static final Log log = LogFactory.getLog(ImportController.class);

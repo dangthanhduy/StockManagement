@@ -1,4 +1,4 @@
-package com.thanhduyuit.DAO;
+package com.thanhduyuit.dao;
 
 import javax.transaction.Transactional;
 

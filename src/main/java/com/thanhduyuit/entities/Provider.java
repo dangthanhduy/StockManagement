@@ -21,7 +21,7 @@ public class Provider {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-
+	
 	private String providerName;
 
 	private String phoneNumber;
@@ -99,6 +99,14 @@ public class Provider {
 
 	public void setListGoods(Set<Good> listGoods) {
 		this.listGoods = listGoods;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

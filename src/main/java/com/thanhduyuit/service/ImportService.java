@@ -1,12 +1,12 @@
-package com.thanhduyuit.Service;
+package com.thanhduyuit.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.thanhduyuit.DAO.GoodDao;
-import com.thanhduyuit.DAO.GoodTypeDao;
+import com.thanhduyuit.dao.GoodDao;
+import com.thanhduyuit.dao.GoodTypeDao;
 import com.thanhduyuit.entities.Good;
 import com.thanhduyuit.entities.GoodType;
 

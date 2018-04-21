@@ -28,10 +28,9 @@ appPages.controller('importController', function ($scope, $http, popupService) {
             });
     };
 
-    $http.get(`http://localhost:8080/getallgoodtypes`)
+    $http.get(`http://localhost:8080/loadprovidergoodtype`)
         .then(function successCallback(response){
             $scope.nameItems = response.data;
-            console.log($scope.nameItems);
         }, function errorCallback(response){
             alert("Error.....");
         });
@@ -40,6 +39,9 @@ appPages.controller('importController', function ($scope, $http, popupService) {
         popupService.openCreateNewGoodPopup();
     };
 
+    $scope.importGoods = function () {
+        popupService.openImportGoodPopup();
+    }
     
     //Get All goods and fill into table
     $http.get(`http://localhost:8080/getallgoods`)

@@ -7,6 +7,7 @@ function popupService($mdDialog) {
 
     service.openCreateNewGoodPopup = openCreateNewGoodPopup;
     service.openExportGoodPopup = openExportGoodPopup;
+    service.openImportGoodPopup = openImportGoodPopup;
     return service;
 
     function openCreateNewGoodPopup() {
@@ -16,6 +17,11 @@ function popupService($mdDialog) {
     
     function openExportGoodPopup() {
         var template = '<export-good></export-good>';
+        createPopup(template);
+    }
+
+    function openImportGoodPopup() {
+        var template = '<import-good></import-good>';
         createPopup(template);
     }
 

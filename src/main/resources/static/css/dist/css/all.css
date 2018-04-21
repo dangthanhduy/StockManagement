@@ -44,13 +44,20 @@ table tr:nth-child(even) {
 }
 
 label {
-    color: #00ca66;
+    color: #111473;
+    font-size: 18px !important;
 }
 
 .btn-createnewgood {
     margin-bottom: 10px;
     float: right;
     margin-top: -55px;
+}
+.btn-importgood {
+    margin-bottom: 10px;
+    float: right;
+    margin-top: -55px;
+    margin-right: 87px;;
 }
 
 .main-footer {
@@ -70,14 +77,42 @@ label {
     margin-left: 20px;
 }
 
-.modal-body .form-horizontal .col-sm-2,
-.modal-body .form-horizontal .col-sm-10 {
-    width: 100%
+.navbar {
+    z-index: 0 !important;
 }
 
-.modal-body .form-horizontal .control-label {
-    text-align: left;
+.create-form {
+    width: 700px;
+    font-size: 16px;
+    padding-top: 100px;
 }
-.modal-body .form-horizontal .col-sm-offset-2 {
-    margin-left: 15px;
+
+.input-form input {
+    width: 400px;
+    padding: 20px;
+    margin: 8px 0;;
+}
+
+.popup {
+    width: 800px;
+    font-size: 16px;
+    height: 800px;
+}
+
+.modal-header {
+    background-color: #f1f1f1;
+    color: #211c73;
+}
+
+.create-type-link {
+    text-decoration: underline;
+}
+
+.create-good-link {
+    padding-bottom: 20px;
+    right: 0px;
+}
+
+.import-table {
+    padding-top: 50px !important;
 }

@@ -7,4 +7,11 @@ appComponent.controller('createNewGoodTypeController', function($scope, $http) {
 
         });
 
+    $http.get('10.88.127.151:8080/getallgoodtypes')
+        .then(function successCallback(response){
+            $scope.nameItems = response;
+        }, function errorCallback(response){
+            alert("Error.....");
+        });
+
 });

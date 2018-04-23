@@ -30,7 +30,10 @@ appPages.controller('importController', function ($scope, $http, popupService) {
 
     $http.get(`http://localhost:8080/loadprovidergoodtype`)
         .then(function successCallback(response){
+            $scope.listProvider = response.data.listProviderName;
             $scope.nameItems = response.data;
+	            console.log("import", $scope.nameItems.listProviderName);
+	            console.log("import", response.data);
         }, function errorCallback(response){
             alert("Error.....");
         });

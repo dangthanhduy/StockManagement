@@ -24,8 +24,7 @@
                         <!--<select ng-model="selectedName" ng-options="x.typeName for x in nameItems"/>-->
                         <!--<a type="text" class="" id="goodType"-->
                            <!--ng-model="type" placeholder="Enter type ..."></a>-->
-                        <select ng-model="selectedName" ng-options="x.listGoodTypeName.name for x in nameItems">
-                        </select>
+                        <select ng-model="selectedName" ng-options="x.goodTypeName for x in listGoodType"></select>
                         <a class="create-type-link" ng-click="createNewType()">Create New Good Type</a>
                     </div>
                 </div>
@@ -36,8 +35,8 @@
                         <!--<select ng-model="selectedName" ng-options="x.typeName for x in nameItems"/>-->
                         <!--<a type="text" class="" id="goodType"-->
                         <!--ng-model="type" placeholder="Enter type ..."></a>-->
-                        <select ng-model="selectedName" ng-options="x.listProviderName.providerName for x in nameItems">
-                        </select>
+                        
+                        <select ng-model="selectedProvider" ng-options="x.providerName for x in listProvider"></select>
                         <a class="create-type-link" ng-click="createProvider()">Create New Provider</a>
                     </div>
                 </div>

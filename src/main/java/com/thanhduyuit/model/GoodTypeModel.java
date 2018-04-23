@@ -12,13 +12,13 @@ public class GoodTypeModel {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-	public String getName() {
+	
+	public String getGoodTypeName() {
 		return goodTypeName;
 	}
 
-	public void setName(String name) {
-		this.goodTypeName = name;
+	public void setGoodTypeName(String goodTypeName) {
+		this.goodTypeName = goodTypeName;
 	}
 
 	public GoodTypeModel(Long id, String goodTypeName) {

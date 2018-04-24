@@ -1,7 +1,8 @@
-appComponent.controller('createNewGoodTypeController', function ($scope, $http, $mdDialog) {
-    var newgoodtype = {};
+appComponent.controller('createProviderController', function ($scope, $http, $mdDialog) {
+    var newprovider = {};
 
     $scope.save = function () {
+
         var config = {
             headers: {
                 'Content-Type': 'application/json',
@@ -9,17 +10,19 @@ appComponent.controller('createNewGoodTypeController', function ($scope, $http, 
             }
         };
 
-        newgoodtype = {
-            typeName: $scope.typeName,
-            code: $scope.code,
+        newprovider = {
+            providerName: $scope.providerName,
+            phoneNumber: $scope.phoneNumber,
+            address: $scope.address,
+            vote: $scope.vote,
             description: $scope.description
         };
 
-        $http.post(`http://localhost:8080/import/createnewgoodtype`, {
-            data: newgoodtype
+        $http.post(`http://localhost:8080/import/createnewprovider`, {
+            data: newprovider
         }, config)
             .then(function successCallback(response) {
-                //    binding save var
+                // binding
             }, function errorCallback(response) {
                 alert("failed send create new good form");
             });
@@ -29,4 +32,5 @@ appComponent.controller('createNewGoodTypeController', function ($scope, $http, 
     $scope.cancel = function () {
         $mdDialog.cancel();
     };
+
 });

@@ -4,7 +4,7 @@
 <div class="modal-body">
     <div class="box box-primary">
         <!--<div class="box-header with-border">-->
-            <!--<h3 class="box-title"></h3>-->
+        <!--<h3 class="box-title"></h3>-->
         <!--</div>-->
         <form class="create-form">
             <div class="pull-left">
@@ -23,10 +23,10 @@
                     <div class="">
                         <!--<select ng-model="selectedName" ng-options="x.typeName for x in nameItems"/>-->
                         <!--<a type="text" class="" id="goodType"-->
-                           <!--ng-model="type" placeholder="Enter type ..."></a>-->
+                        <!--ng-model="type" placeholder="Enter type ..."></a>-->
                         <select ng-model="selectedTypeName" ng-options="x.goodTypeName for x in listGoodType"
                                 ng-change="showSelect(selectedTypeName)"></select>
-                        <a class="create-type-link" ng-click="createNewType()">Create New Good Type</a>
+                        <a class="create-type-link" ng-click="createNewGoodType()">Create New Good Type</a>
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@
                         <!--<select ng-model="selectedName" ng-options="x.typeName for x in nameItems"/>-->
                         <!--<a type="text" class="" id="goodType"-->
                         <!--ng-model="type" placeholder="Enter type ..."></a>-->
-                        
+
                         <select ng-model="selectedProvider" ng-options="x.providerName for x in listProvider"
                                 ng-change="showSelect(selectedProvider)"></select>
                         <a class="create-type-link" ng-click="createProvider()">Create New Provider</a>
@@ -72,6 +72,6 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button ng-click="cancel()" class="btn" >Cancel</button>
-    <button ng-click="save()" class="btn btn-primary" >Save</button>
+    <button ng-click="cancel()" class="btn">Cancel</button>
+    <button ng-click="save()" class="btn btn-primary">Save</button>
 </div>

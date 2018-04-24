@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <h1>Create New Provider</h1>
+</div>
+<div class="modal-body">
+    <div class="box box-primary">
+
+        <form class="create-form">
+            <div class="form-group">
+                <label for="providerName" class="control-label">Type's Name</label>
+                <div class="input-form">
+                    <input type="text" class="" id="providerName"
+                           ng-model="providerName" placeholder="Enter provider name ...">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber" class="control-label">Code</label>
+                <div class="input-form">
+                    <input type="text" class="" id="phoneNumber"
+                           ng-model="phoneNumber" placeholder="Enter phone number ...">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address" class="control-label">Description</label>
+                <div class="input-form">
+                    <input type="text" class="" id="address"
+                           ng-model="address" placeholder="Enter address ...">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="vote" class="control-label">Code</label>
+                <div class="input-form">
+                    <input type="text" class="" id="vote"
+                           ng-model="vote" placeholder="Enter vote ...">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="control-label">Description</label>
+                <div class="input-form">
+                    <input type="text" class="" id="description"
+                           ng-model="description" placeholder="Enter Description ...">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button ng-click="cancel()" class="btn" >Cancel</button>
+    <button ng-click="save()" class="btn btn-primary" >Save</button>
+</div>

@@ -8,6 +8,8 @@ function popupService($mdDialog) {
     service.openCreateNewGoodPopup = openCreateNewGoodPopup;
     service.openExportGoodPopup = openExportGoodPopup;
     service.openImportGoodPopup = openImportGoodPopup;
+    service.openCreateNewGoodTypePopup = openCreateNewGoodTypePopup;
+    service.openCreateProviderPopup = openCreateProviderPopup;
     return service;
 
     function openCreateNewGoodPopup() {
@@ -25,9 +27,22 @@ function popupService($mdDialog) {
         createPopup(template);
     }
 
-    function createPopup(template, confirmCallback, cancelCallback, clickOutsideToClose) {
+    function openCreateNewGoodTypePopup() {
+        var template = '<create-new-good-type></create-new-good-type>';
+        var multiple = true;
+        createPopup(template, multiple);
+    }
+
+    function openCreateProviderPopup() {
+        var template = '<create-provider></create-provider>';
+        var multiple = true;
+        createPopup(template, multiple);
+    }
+
+    function createPopup(template, multiple, confirmCallback, cancelCallback, clickOutsideToClose) {
         $mdDialog.show({
             template: template,
+            multiple: multiple,
             clickOutsideToClose: clickOutsideToClose
         }).then(() => {
             if (confirmCallback) {

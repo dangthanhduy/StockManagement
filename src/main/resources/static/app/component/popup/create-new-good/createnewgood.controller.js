@@ -9,21 +9,31 @@ appComponent.controller('createNewGoodController', function($scope, $http, $mdDi
         alert("Error.....");
     });
 
-    $scope.showSelect = function(selectedType, selectedProvider) {
-        newgood = {
-            name: $scope.name,
-            selectedName: selectedType,
-            selectedType: selectedProvider,
-            code: $scope.code,
-            unit: $scope.unit,
-            price: $scope.price
-        };
-    };
+//    $scope.showSelect = function(selectedTypeName, selectedProvider) {
+//       
+//    };
     //quang cai rest API de create new  vo cho nay
     $scope.save = function () {
-        $http.post(``, {
+    	
+    	var config = {
+                headers : {
+                	'Content-Type': 'application/json',
+                	'Accept': 'text/plain'
+                }
+        }
+    	 newgood = {
+    	        	code: $scope.code,
+    	            unit: $scope.unit,
+    	            importPrice: $scope.price,
+    	            exportPrice: $scope.price,
+    	            name: $scope.name,
+    	            type: $scope.selectedTypeName.id,
+    	            providerID: $scope.selectedProvider.id,
+    	            imagePath : $scope.name
+    	        };
+        $http.post(`http://localhost:8080/import/createnewgood`,{
             data: newgood
-        })
+        }, config)
             .then(function successCallback(response){
                 alert("successed send create new good form");
             }, function errorCallback(response){

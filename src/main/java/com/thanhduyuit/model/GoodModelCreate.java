@@ -1,5 +1,8 @@
 package com.thanhduyuit.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class GoodModelCreate {
 
 	private String name;
@@ -14,12 +17,17 @@ public class GoodModelCreate {
 
 	private String providerID;
 
+	private String importPrice;
+
+	private String exportPrice;
+
 	public GoodModelCreate() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public GoodModelCreate(String name, String code, String type, String unit, String imagePath, String providerID) {
+	public GoodModelCreate(String name, String code, String type, String unit, String imagePath, String providerID,
+			String importPrice, String exportPrice) {
 		super();
 		this.name = name;
 		this.code = code;
@@ -27,6 +35,24 @@ public class GoodModelCreate {
 		this.unit = unit;
 		this.imagePath = imagePath;
 		this.providerID = providerID;
+		this.importPrice = importPrice;
+		this.exportPrice = exportPrice;
+	}
+
+	public String getImportPrice() {
+		return importPrice;
+	}
+
+	public void setImportPrice(String importPrice) {
+		this.importPrice = importPrice;
+	}
+
+	public String getExportPrice() {
+		return exportPrice;
+	}
+
+	public void setExportPrice(String exportPrice) {
+		this.exportPrice = exportPrice;
 	}
 
 	public String getName() {

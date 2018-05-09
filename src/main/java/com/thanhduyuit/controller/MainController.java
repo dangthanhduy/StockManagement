@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thanhduyuit.GetClientIpInfo;
-import com.thanhduyuit.model.GoodStandardResponse;
-import com.thanhduyuit.model.GoodTypeListNameResponse;
-import com.thanhduyuit.model.GoodTypeResponse;
-import com.thanhduyuit.model.ProviderGoodTypeReponse;
-import com.thanhduyuit.model.ProviderResponse;
+import com.thanhduyuit.response.GoodStandardResponse;
+import com.thanhduyuit.response.GoodTypeListNameResponse;
+import com.thanhduyuit.response.GoodTypeResponse;
+import com.thanhduyuit.response.ProviderGoodTypeReponse;
+import com.thanhduyuit.response.ProviderResponse;
 import com.thanhduyuit.service.ImportService;
 import com.thanhduyuit.service.ResponseBuilder;
 

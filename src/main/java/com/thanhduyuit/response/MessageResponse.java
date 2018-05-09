@@ -1,4 +1,4 @@
-package com.thanhduyuit.model;
+package com.thanhduyuit.response;
 
 
 public class MessageResponse {

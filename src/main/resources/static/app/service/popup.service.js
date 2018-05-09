@@ -2,14 +2,18 @@ angular
     .module('demoApp')
     .factory('popupService', popupService);
 
+var newGoodType = '';
 function popupService($mdDialog) {
     var service = {};
-
+    
     service.openCreateNewGoodPopup = openCreateNewGoodPopup;
     service.openExportGoodPopup = openExportGoodPopup;
     service.openImportGoodPopup = openImportGoodPopup;
     service.openCreateNewGoodTypePopup = openCreateNewGoodTypePopup;
     service.openCreateProviderPopup = openCreateProviderPopup;
+    service.reloadProvider = reloadProvider;
+    service.reloadUnit = reloadUnit;
+    service.reloadGoodType = reloadGoodType;
     return service;
 
     function openCreateNewGoodPopup() {
@@ -32,6 +36,20 @@ function popupService($mdDialog) {
         var multiple = true;
         createPopup(template, multiple);
     }
+    
+    function reloadProvider() {
+    	alert("Reload provider");
+    }
+    
+    function reloadUnit() {
+    	alert("Reload unit");
+    }
+    
+    function reloadGoodType(response) {
+    	alert(goodType);
+    	newGoodType = goodType;
+    }
+    
 
     function openCreateProviderPopup() {
         var template = '<create-provider></create-provider>';

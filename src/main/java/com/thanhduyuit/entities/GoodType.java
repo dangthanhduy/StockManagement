@@ -84,4 +84,12 @@ public class GoodType {
 		this.decription = decription;
 	}
 
+	public GoodType(String typeName, String code, String decription) {
+		super();
+		this.typeName = typeName;
+		this.code = code;
+		this.decription = decription;
+	}
+	
+
 }

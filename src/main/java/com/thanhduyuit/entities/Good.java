@@ -38,7 +38,7 @@ public class Good {
 	private double importPrice;
 
 	private double exportPrice;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "good_type_id")
 	@JsonIgnore
@@ -170,6 +170,21 @@ public class Good {
 
 	public void setListStock(Set<Stock> listStock) {
 		this.listStock = listStock;
+	}
+
+	public Good(String name, String code, String type, String unit, String imagePath, double quantity,
+			double importPrice, double exportPrice, GoodType goodType, Provider provider) {
+		super();
+		this.name = name;
+		this.code = code;
+		this.type = type;
+		this.unit = unit;
+		this.imagePath = imagePath;
+		this.quantity = quantity;
+		this.importPrice = importPrice;
+		this.exportPrice = exportPrice;
+		this.goodType = goodType;
+		this.provider = provider;
 	}
 
 }

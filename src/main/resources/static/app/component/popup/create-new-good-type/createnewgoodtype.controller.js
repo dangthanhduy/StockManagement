@@ -1,4 +1,4 @@
-appComponent.controller('createNewGoodTypeController', function ($scope, $http, $mdDialog) {
+appComponent.controller('createNewGoodTypeController', function ($scope, $http, $mdDialog, popupService) {
     var newgoodtype = {};
 
     $scope.save = function () {
@@ -15,11 +15,10 @@ appComponent.controller('createNewGoodTypeController', function ($scope, $http, 
             description: $scope.description
         };
 
-        $http.post(`http://localhost:8080/import/createnewgoodtype`, {
-            data: newgoodtype
-        }, config)
+        $http.post(`http://localhost:8080/import/createnewgoodtype`, newgoodtype)
             .then(function successCallback(response) {
-                //    binding save var
+                //    Reload new type into tag <select>
+//            	popupService.reloadGoodType(response);
             }, function errorCallback(response) {
                 alert("failed send create new good form");
             });

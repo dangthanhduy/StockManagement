@@ -1,4 +1,4 @@
-package com.thanhduyuit.model;
+package com.thanhduyuit.response;
 
 import java.util.Map;
 

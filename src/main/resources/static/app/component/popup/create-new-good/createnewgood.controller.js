@@ -5,6 +5,7 @@ appComponent.controller('createNewGoodController', function ($scope, $http, $mdD
         .then(function successCallback(response) {
             $scope.listProvider = response.data.listProviderName;
             $scope.listGoodType = response.data.listGoodTypeName;
+            $scope.listUnitType = response.data.listUnitType;
         }, function errorCallback(response) {
             alert("Error.....");
         });
@@ -19,7 +20,7 @@ appComponent.controller('createNewGoodController', function ($scope, $http, $mdD
         };
         newgood = {
             code: $scope.code,
-            unit: $scope.unit,
+            unit: $scope.selectedUnit.unitName,
             importPrice: $scope.price,
             exportPrice: $scope.price,
             name: $scope.name,
@@ -27,13 +28,11 @@ appComponent.controller('createNewGoodController', function ($scope, $http, $mdD
             providerID: $scope.selectedProvider.id,
             imagePath: $scope.name
         };
-        $http.post(`http://localhost:8080/import/createnewgood`, {
-            data: newgood
-        }, config)
+        $http.post(`http://localhost:8080/import/createnewgood`, newgood) 
             .then(function successCallback(response) {
-                alert("successed send create new good form");
+                alert("successed send create new good form !");
             }, function errorCallback(response) {
-                alert("failed send create new good form");
+                alert("failed send create new good form !");
             });
         $mdDialog.hide();
     };
@@ -44,6 +43,7 @@ appComponent.controller('createNewGoodController', function ($scope, $http, $mdD
 
     $scope.createNewGoodType = function () {
         popupService.openCreateNewGoodTypePopup();
+        alert("Here");
     };
 
     $scope.createProvider = function () {

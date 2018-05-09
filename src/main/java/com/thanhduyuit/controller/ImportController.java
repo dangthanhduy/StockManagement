@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thanhduyuit.GetClientIpInfo;
 import com.thanhduyuit.model.GoodModelCreate;
-import com.thanhduyuit.model.GoodStandardResponse;
+import com.thanhduyuit.model.GoodTypeModelCreate;
+import com.thanhduyuit.response.CreateGoodResponse;
+import com.thanhduyuit.response.GoodStandardResponse;
 import com.thanhduyuit.service.ImportService;
 import com.thanhduyuit.service.ResponseBuilder;
 
@@ -51,17 +53,24 @@ public class ImportController {
 
 	@RequestMapping(value = "/createnewgood", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public GoodStandardResponse createNewGood(HttpServletRequest request, @RequestBody GoodModelCreate data)
+	public CreateGoodResponse createNewGood(HttpServletRequest request, @RequestBody GoodModelCreate data)
 			throws Exception {
 
 		// Log client info
 		log.info("Reuqest '/createnewgood' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
 		GetClientIpInfo.getClientInfo(request);
+		return importer.createNewGood(data);
+	}
+	
+	@RequestMapping(value = "/createnewgoodtype", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public String createNewGoodType(HttpServletRequest request, @RequestBody GoodTypeModelCreate data)
+			throws Exception {
 
-		GoodStandardResponse response = new GoodStandardResponse();
-		System.out.println(data);
-		response = responseRuilder.getAllGoodBuilder(importer.getAllGoods());
-		return response;
+		// Log client info
+		log.info("Reuqest '/createnewgoodtype' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+		return importer.createGoodType(data);
 	}
 
 }

@@ -11,17 +11,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.thanhduyuit.controller.ImportController;
+import com.thanhduyuit.dao.UnitDao;
 import com.thanhduyuit.entities.Good;
 import com.thanhduyuit.entities.GoodType;
 import com.thanhduyuit.entities.Provider;
-import com.thanhduyuit.model.GoodStandardResponse;
-import com.thanhduyuit.model.GoodTypeListNameResponse;
+import com.thanhduyuit.entities.Unit;
 import com.thanhduyuit.model.GoodTypeModel;
-import com.thanhduyuit.model.GoodTypeResponse;
-import com.thanhduyuit.model.MessageResponse;
-import com.thanhduyuit.model.ProviderGoodTypeReponse;
 import com.thanhduyuit.model.ProviderModel;
-import com.thanhduyuit.model.ProviderResponse;
+import com.thanhduyuit.model.UnitTypeModel;
+import com.thanhduyuit.response.GoodStandardResponse;
+import com.thanhduyuit.response.GoodTypeListNameResponse;
+import com.thanhduyuit.response.GoodTypeResponse;
+import com.thanhduyuit.response.MessageResponse;
+import com.thanhduyuit.response.ProviderGoodTypeReponse;
+import com.thanhduyuit.response.ProviderResponse;
 
 @Service
 public class ResponseBuilder {
@@ -32,7 +35,10 @@ public class ResponseBuilder {
 	
 	@Autowired
 	private GoodTypeService goodTypeService;
-
+	
+	@Autowired
+	private UnitService unitService;
+	
 	public MessageResponse createGoodBuilder(String contents) {
 		MessageResponse response = new MessageResponse();
 		if (contents == null) {
@@ -131,9 +137,11 @@ public class ResponseBuilder {
 		ProviderGoodTypeReponse response = new ProviderGoodTypeReponse();
 		List<ProviderModel> listProvider = new ArrayList<>();
 		List<GoodTypeModel> listGoodType = new ArrayList<>();
+		List<UnitTypeModel> listUnitType = new ArrayList<>();
 		listProvider = providerService.getAllProviderAsName();
 		listGoodType = goodTypeService.getAllGoodTypeAsName();
-
+		listUnitType = unitService.getAllUnitList();
+		
 		if (listProvider == null) {
 			log.info("listGoodType is null");
 			response.setStatuscode(500);
@@ -144,6 +152,7 @@ public class ResponseBuilder {
 			response.setMessage("Success");
 			response.setListProviderName(listProvider);
 			response.setListGoodTypeName(listGoodType);
+			response.setListUnitType(listUnitType);
 			log.info("Get All provider As Name and ID Success !!!");
 			return response;
 		}

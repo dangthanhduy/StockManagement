@@ -38,7 +38,7 @@ public class Good {
 	private double importPrice;
 
 	private double exportPrice;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "good_type_id")
 	@JsonIgnore
@@ -48,6 +48,11 @@ public class Good {
 	@JoinColumn(name = "provider_id")
 	@JsonIgnore
 	private Provider provider;
+
+	@ManyToOne
+	@JoinColumn(name = "customer_id")
+	@JsonIgnore
+	private Customer customer;
 
 	@ManyToMany(mappedBy = "listGoodOfStock")
 	@JsonIgnore
@@ -73,6 +78,40 @@ public class Good {
 		this.exportPrice = exportPrice;
 		this.goodType = goodType;
 		this.provider = provider;
+		this.listStock = listStock;
+	}
+
+	public Good(String name, String code, String type, String unit, String imagePath, double quantity,
+			double importPrice, double exportPrice, GoodType goodType, Provider provider) {
+		super();
+		this.name = name;
+		this.code = code;
+		this.type = type;
+		this.unit = unit;
+		this.imagePath = imagePath;
+		this.quantity = quantity;
+		this.importPrice = importPrice;
+		this.exportPrice = exportPrice;
+		this.goodType = goodType;
+		this.provider = provider;
+	}
+
+	public Good(long id, String name, String code, String type, String unit, String imagePath, double quantity,
+			double importPrice, double exportPrice, GoodType goodType, Provider provider, Customer customer,
+			Set<Stock> listStock) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.code = code;
+		this.type = type;
+		this.unit = unit;
+		this.imagePath = imagePath;
+		this.quantity = quantity;
+		this.importPrice = importPrice;
+		this.exportPrice = exportPrice;
+		this.goodType = goodType;
+		this.provider = provider;
+		this.customer = customer;
 		this.listStock = listStock;
 	}
 
@@ -172,19 +211,12 @@ public class Good {
 		this.listStock = listStock;
 	}
 
-	public Good(String name, String code, String type, String unit, String imagePath, double quantity,
-			double importPrice, double exportPrice, GoodType goodType, Provider provider) {
-		super();
-		this.name = name;
-		this.code = code;
-		this.type = type;
-		this.unit = unit;
-		this.imagePath = imagePath;
-		this.quantity = quantity;
-		this.importPrice = importPrice;
-		this.exportPrice = exportPrice;
-		this.goodType = goodType;
-		this.provider = provider;
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 }

@@ -16,11 +16,10 @@ appComponent.controller('createNewGoodTypeController', function ($scope, $http, 
         };
 
         $http.post(`http://localhost:8080/import/createnewgoodtype`, newgoodtype)
-            .then(function successCallback(response) {
-                //    Reload new type into tag <select>
-//            	popupService.reloadGoodType(response);
+            .then( function successCallback(response) {
+                alert("Create good type success with name : " + response.data.goodTypeID);
             }, function errorCallback(response) {
-                alert("failed send create new good form");
+            	alert("Failed! GoodType haven't create");
             });
         $mdDialog.hide();
     };

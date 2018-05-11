@@ -2,7 +2,6 @@ angular
     .module('demoApp')
     .factory('popupService', popupService);
 
-var newGoodType = '';
 function popupService($mdDialog) {
     var service = {};
     
@@ -11,9 +10,10 @@ function popupService($mdDialog) {
     service.openImportGoodPopup = openImportGoodPopup;
     service.openCreateNewGoodTypePopup = openCreateNewGoodTypePopup;
     service.openCreateProviderPopup = openCreateProviderPopup;
-    service.reloadProvider = reloadProvider;
-    service.reloadUnit = reloadUnit;
-    service.reloadGoodType = reloadGoodType;
+    service.openCreateNewUnitPopup = openCreateNewUnitPopup;
+//    service.reloadProvider = reloadProvider;
+//    service.reloadUnit = reloadUnit;
+//    service.reloadGoodType = reloadGoodType;
     return service;
 
     function openCreateNewGoodPopup() {
@@ -37,18 +37,24 @@ function popupService($mdDialog) {
         createPopup(template, multiple);
     }
     
-    function reloadProvider() {
-    	alert("Reload provider");
+    function openCreateNewUnitPopup() {
+        var template = '<create-unit></create-unit>';
+        var multiple = true;
+        createPopup(template, multiple);
     }
     
-    function reloadUnit() {
-    	alert("Reload unit");
-    }
-    
-    function reloadGoodType(response) {
-    	alert(goodType);
-    	newGoodType = goodType;
-    }
+//    function reloadProvider() {
+//    	alert("Reload provider");
+//    }
+//    
+//    function reloadUnit() {
+//    	alert("Reload unit");
+//    }
+//    
+//    function reloadGoodType(response) {
+//    	alert(goodType);
+//    	newGoodType = goodType;
+//    }
     
 
     function openCreateProviderPopup() {

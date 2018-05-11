@@ -1,76 +1,86 @@
 <div class="modal-header">
-    <h1>Create new good</h1>
+	<h1>Create new good</h1>
 </div>
 <div class="modal-body">
-    <div class="box box-primary">
-        <!--<div class="box-header with-border">-->
-        <!--<h3 class="box-title"></h3>-->
-        <!--</div>-->
-        <form class="create-form">
-            <div class="pull-left">
+	<div class="box box-primary">
+		<!--<div class="box-header with-border">-->
+		<!--<h3 class="box-title"></h3>-->
+		<!--</div>-->
+		<form class="create-form">
+			<div class="pull-left">
+				<div ng-model="successMessage"
+					class="container alert alert-success fade in "
+					style="display: none; text-align: center; weight: 50%">
+					<a href="" class="close" data-dismiss="alert">&times;</a> <strong>Success!</strong>
+					Create Successfully!
+				</div>
+				<div class="form-group">
+					<label for="goodName" class="control-label">Good's name</label>
+					<div class="input-form">
+						<input type="text" class="" id="goodName" ng-model="name"
+							placeholder="Enter name ...">
+					</div>
+				</div>
 
-                <div class="form-group">
-                    <label for="goodName" class="control-label">Good's
-                        name</label>
-                    <div class="input-form">
-                        <input type="text" class="" id="goodName"
-                               ng-model="name" placeholder="Enter name ...">
-                    </div>
-                </div>
+				<div class="form-group">
+					<label class="control-label">Type</label>
+					<div class="">
+						<!--<select ng-model="selectedName" ng-options="x.typeName for x in nameItems"/>-->
+						<!--<a type="text" class="" id="goodType"-->
+						<!--ng-model="type" placeholder="Enter type ..."></a>-->
+						<select ng-model="selectedTypeName"
+							ng-options="x.goodTypeName for x in listGoodType"
+							ng-change="showSelect(selectedTypeName)"></select> <a
+							class="create-type-link" ng-click="createNewGoodType()">Create
+							New Good Type</a>
+					</div>
+				</div>
 
-                <div class="form-group">
-                    <label class="control-label">Type</label>
-                    <div class="">
-                        <!--<select ng-model="selectedName" ng-options="x.typeName for x in nameItems"/>-->
-                        <!--<a type="text" class="" id="goodType"-->
-                        <!--ng-model="type" placeholder="Enter type ..."></a>-->
-                        <select ng-model="selectedTypeName" ng-options="x.goodTypeName for x in listGoodType"
-                                ng-change="showSelect(selectedTypeName)"></select>
-                        <a class="create-type-link" ng-click="createNewGoodType()">Create New Good Type</a>
-                    </div>
-                </div>
+				<div class="form-group">
+					<label class="control-label">Provider</label>
+					<div class="">
+						<!--<select ng-model="selectedName" ng-options="x.typeName for x in nameItems"/>-->
+						<!--<a type="text" class="" id="goodType"-->
+						<!--ng-model="type" placeholder="Enter type ..."></a>-->
 
-                <div class="form-group">
-                    <label class="control-label">Provider</label>
-                    <div class="">
-                        <!--<select ng-model="selectedName" ng-options="x.typeName for x in nameItems"/>-->
-                        <!--<a type="text" class="" id="goodType"-->
-                        <!--ng-model="type" placeholder="Enter type ..."></a>-->
+						<select ng-model="selectedProvider"
+							ng-options="x.providerName for x in listProvider"
+							ng-change="showSelect(selectedProvider)"></select> <a
+							class="create-type-link" ng-click="createProvider()">Create
+							New Provider</a>
+					</div>
+				</div>
 
-                        <select ng-model="selectedProvider" ng-options="x.providerName for x in listProvider"
-                                ng-change="showSelect(selectedProvider)"></select>
-                        <a class="create-type-link" ng-click="createProvider()">Create New Provider</a>
-                    </div>
-                </div>
+				<div class="form-group">
+					<label for="goodCode" class="control-label">Code</label>
+					<div class="input-form">
+						<input type="text" class="" id="goodCode" ng-model="code"
+							placeholder="Enter code ...">
+					</div>
+				</div>
 
-                <div class="form-group">
-                    <label for="goodCode" class="control-label">Code</label>
-                    <div class="input-form">
-                        <input type="text" class="" id="goodCode"
-                               ng-model="code" placeholder="Enter code ...">
-                    </div>
-                </div>
+				<div class="form-group">
+					<label for="goodUnit" class="control-label">Unit</label> <select
+						ng-model="selectedUnit"
+						ng-options="x.unitName for x in listUnitType"
+						ng-change="showSelect(selectedUnit)"></select> <a
+						class="create-type-link" ng-click="createUnit()">Create
+						New Unit</a>
+				</div>
 
-                <div class="form-group">
-                    <label for="goodUnit" class="control-label">Unit</label>
-                    <select ng-model="selectedUnit" ng-options="x.unitName for x in listUnitType"
-                                ng-change="showSelect(selectedUnit)"></select>
-                        <a class="create-type-link" ng-click="createProvider()">Create New Unit</a>
-                </div>
-                
-                <div class="form-group">
-                    <label for="goodPrice" class="control-label">Price</label>
-                    <div class="input-form">
-                        <input type="text" class="" id="goodPrice"
-                               ng-model="price" placeholder="Enter price ...">
-                    </div>
-                </div>
+				<div class="form-group">
+					<label for="goodPrice" class="control-label">Price</label>
+					<div class="input-form">
+						<input type="text" class="" id="goodPrice" ng-model="price"
+							placeholder="Enter price ...">
+					</div>
+				</div>
 
-            </div>
-        </form>
-    </div>
+			</div>
+		</form>
+	</div>
 </div>
 <div class="modal-footer">
-    <button ng-click="cancel()" class="btn">Cancel</button>
-    <button ng-click="save()" class="btn btn-primary">Save</button>
+	<button ng-click="cancel()" class="btn">Cancel</button>
+	<button ng-click="save()" class="btn btn-primary">Save</button>
 </div>

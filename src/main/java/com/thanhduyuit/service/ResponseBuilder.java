@@ -17,14 +17,23 @@ import com.thanhduyuit.entities.GoodType;
 import com.thanhduyuit.entities.Provider;
 import com.thanhduyuit.entities.Unit;
 import com.thanhduyuit.model.GoodTypeModel;
+import com.thanhduyuit.model.GoodTypeModelCreate;
 import com.thanhduyuit.model.ProviderModel;
+import com.thanhduyuit.model.ProviderModelCreate;
+import com.thanhduyuit.model.UnitModelCreate;
 import com.thanhduyuit.model.UnitTypeModel;
+import com.thanhduyuit.response.CreateGoodTypeResponse;
+import com.thanhduyuit.response.CreateProviderResponse;
+import com.thanhduyuit.response.CreateUnitResponse;
 import com.thanhduyuit.response.GoodStandardResponse;
 import com.thanhduyuit.response.GoodTypeListNameResponse;
 import com.thanhduyuit.response.GoodTypeResponse;
 import com.thanhduyuit.response.MessageResponse;
 import com.thanhduyuit.response.ProviderGoodTypeReponse;
 import com.thanhduyuit.response.ProviderResponse;
+
+import Ultilities.Converter;
+import Ultilities.MessageConstants;
 
 @Service
 public class ResponseBuilder {
@@ -154,6 +163,54 @@ public class ResponseBuilder {
 			response.setListGoodTypeName(listGoodType);
 			response.setListUnitType(listUnitType);
 			log.info("Get All provider As Name and ID Success !!!");
+			return response;
+		}
+	}
+	
+	public CreateGoodTypeResponse createGoodTypeBuilder(GoodType goodtype) {
+		CreateGoodTypeResponse response = new CreateGoodTypeResponse();
+		if(goodtype != null) {
+			GoodTypeModelCreate model = Converter.goodTypeToModelCreate(goodtype);
+			response.setGoodTypeModel(model);
+			response.setGoodTypeID(goodtype.getId());
+			response.setMessage(MessageConstants.CREATE_GOODTYPE_SUCCESSFUL_MESSAGE + goodtype.getId());
+			response.setStatuscode(MessageConstants.SUCCESSFULL_STATUS_CODE);
+			return response;
+		} else {
+			response.setMessage(MessageConstants.CREATE_GOODTYPE_FAILED_MESSAGE);
+			response.setStatuscode(MessageConstants.FAILED_STATUS_CODE);
+			return response;
+		}
+	}
+	
+	public CreateProviderResponse createProviderBuilder(Provider provider) {
+		CreateProviderResponse response = new CreateProviderResponse();
+		if(provider != null) {
+			ProviderModelCreate model = Converter.providerToModelCreate(provider);
+			response.setProviderModel(model);
+			response.setProviderID(provider.getId());
+			response.setMessage(MessageConstants.CREATE_PROVIDER_SUCCESSFUL_MESSAGE + provider.getId());
+			response.setStatuscode(MessageConstants.SUCCESSFULL_STATUS_CODE);
+			return response;
+		} else {
+			response.setMessage(MessageConstants.CREATE_PROVIDER_FAILED_MESSAGE);
+			response.setStatuscode(MessageConstants.FAILED_STATUS_CODE);
+			return response;
+		}
+	}
+	
+	public CreateUnitResponse createUnitBuilder(Unit unit) {
+		CreateUnitResponse response = new CreateUnitResponse();
+		if(unit != null) {
+			UnitModelCreate model = Converter.unitToModelCreate(unit);
+			response.setUnitID(unit.getId());
+			response.setUnitModel(model);
+			response.setMessage(MessageConstants.CREATE_PROVIDER_SUCCESSFUL_MESSAGE + unit.getId());
+			response.setStatuscode(MessageConstants.SUCCESSFULL_STATUS_CODE);
+			return response;
+		} else {
+			response.setMessage(MessageConstants.CREATE_PROVIDER_FAILED_MESSAGE);
+			response.setStatuscode(MessageConstants.FAILED_STATUS_CODE);
 			return response;
 		}
 	}

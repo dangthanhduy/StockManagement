@@ -29,13 +29,16 @@ appComponent.controller('createNewGoodController', function ($scope, $http, $mdD
             imagePath: $scope.name
         };
         $http.post(`http://localhost:8080/import/createnewgood`, newgood) 
-            .then(function successCallback(response) {
-                alert("successed send create new good form !");
-            }, function errorCallback(response) {
+            .then(function errorCallback(error) {
                 alert("failed send create new good form !");
+            }, function successCallback(response) {
+//            	response
+            	 $scope.successMessage.delay(1500).fadeOut('slow');
+                alert("Create new good good successfully with :"+ response.data);
             });
         $mdDialog.hide();
     };
+    
 
     $scope.cancel = function () {
         $mdDialog.cancel();
@@ -43,10 +46,13 @@ appComponent.controller('createNewGoodController', function ($scope, $http, $mdD
 
     $scope.createNewGoodType = function () {
         popupService.openCreateNewGoodTypePopup();
-        alert("Here");
     };
 
     $scope.createProvider = function () {
         popupService.openCreateProviderPopup();
+    }
+    
+    $scope.createUnit = function () {
+        popupService.openCreateNewUnitPopup();
     }
 });

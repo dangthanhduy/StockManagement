@@ -1,4 +1,4 @@
-appComponent.controller('createProviderController', function ($scope, $http, $mdDialog) {
+appComponent.controller('createProviderController', function ($scope, $http, $mdDialog, popupService) {
     var newprovider = {};
 
     $scope.save = function () {
@@ -6,7 +6,7 @@ appComponent.controller('createProviderController', function ($scope, $http, $md
         var config = {
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'text/plain'
+                'Accept': '*/*'
             }
         };
 
@@ -18,13 +18,11 @@ appComponent.controller('createProviderController', function ($scope, $http, $md
             description: $scope.description
         };
 
-        $http.post(`http://localhost:8080/import/createnewprovider`, {
-            data: newprovider
-        }, config)
+        $http.post(`http://localhost:8080/import/createnewprovider`, newprovider)
             .then(function successCallback(response) {
-                // binding
+                alert("Create provider success with name " + response.data.providerID)
             }, function errorCallback(response) {
-                alert("failed send create new good form");
+                alert("Failed! Provider haven't create");
             });
         $mdDialog.hide();
     };

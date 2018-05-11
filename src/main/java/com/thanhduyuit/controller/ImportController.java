@@ -1,8 +1,5 @@
 package com.thanhduyuit.controller;
 
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,7 +16,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.thanhduyuit.GetClientIpInfo;
 import com.thanhduyuit.model.GoodModelCreate;
 import com.thanhduyuit.model.GoodTypeModelCreate;
+import com.thanhduyuit.model.ProviderModelCreate;
+import com.thanhduyuit.model.UnitModelCreate;
 import com.thanhduyuit.response.CreateGoodResponse;
+import com.thanhduyuit.response.CreateGoodTypeResponse;
+import com.thanhduyuit.response.CreateProviderResponse;
+import com.thanhduyuit.response.CreateUnitResponse;
 import com.thanhduyuit.response.GoodStandardResponse;
 import com.thanhduyuit.service.ImportService;
 import com.thanhduyuit.service.ResponseBuilder;
@@ -64,13 +66,35 @@ public class ImportController {
 	
 	@RequestMapping(value = "/createnewgoodtype", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public String createNewGoodType(HttpServletRequest request, @RequestBody GoodTypeModelCreate data)
+	public CreateGoodTypeResponse createNewGoodType(HttpServletRequest request, @RequestBody GoodTypeModelCreate data)
 			throws Exception {
 
 		// Log client info
 		log.info("Reuqest '/createnewgoodtype' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
 		GetClientIpInfo.getClientInfo(request);
 		return importer.createGoodType(data);
+	}
+	
+	@RequestMapping(value = "/createnewprovider", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public CreateProviderResponse createNewProvider(HttpServletRequest request, @RequestBody ProviderModelCreate data)
+			throws Exception {
+
+		// Log client info
+		log.info("Reuqest '/createnewprovider' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+		return importer.createNewProvider(data);
+	}
+	
+	@RequestMapping(value = "/createnewunit", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public CreateUnitResponse createUnit(HttpServletRequest request, @RequestBody UnitModelCreate data)
+			throws Exception {
+
+		// Log client info
+		log.info("Reuqest '/createnewunit' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+		return importer.createNewUnit(data);
 	}
 
 }

@@ -1,0 +1,30 @@
+<div class="modal-header">
+    <h1>Create New Unit</h1>
+</div>
+<div class="modal-body">
+    <div class="box box-primary">
+
+        <form class="create-form">
+            <div class="form-group">
+                <label for="unitName" class="control-label">Unit's Name</label>
+                <div class="input-form">
+                    <input type="text" class="" id="unitName"
+                           ng-model="unitName" placeholder="Enter provider name ...">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="description" class="control-label">Description</label>
+                <div class="input-form">
+                    <input type="text" class="" id="unitDescription"
+                           ng-model="unitDescription" placeholder="Enter Description ...">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button ng-click="cancel()" class="btn" >Cancel</button>
+    <button ng-click="save()" class="btn btn-primary" >Save</button>
+</div>

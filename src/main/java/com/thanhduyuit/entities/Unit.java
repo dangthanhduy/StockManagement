@@ -42,9 +42,8 @@ public class Unit {
 		this.description = description;
 	}
 
-	public Unit(long id, String unit, String description) {
+	public Unit(String unit, String description) {
 		super();
-		this.id = id;
 		this.unit = unit;
 		this.description = description;
 	}

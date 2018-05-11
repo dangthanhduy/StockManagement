@@ -109,4 +109,14 @@ public class Provider {
 		this.id = id;
 	}
 
+	public Provider(String providerName, String phoneNumber, String address, String vote, String decription) {
+		super();
+		this.providerName = providerName;
+		this.phoneNumber = phoneNumber;
+		this.address = address;
+		this.vote = vote;
+		this.decription = decription;
+	}
+	
+
 }

@@ -15,7 +15,7 @@ appComponent.controller('createUnitController', function ($scope, $http, $mdDial
             description: $scope.unitDescription
         };
 
-        $http.post(`http://localhost:8080/import/createnewunit`, newUnit)
+        $http.post(`/import/createnewunit`, newUnit)
             .then(function successCallback(response) {
                 alert("Create Unit success with name " + response.data.newUnitID)
             }, function errorCallback(response) {

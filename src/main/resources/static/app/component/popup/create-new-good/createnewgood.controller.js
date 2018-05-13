@@ -1,7 +1,7 @@
 appComponent.controller('createNewGoodController', function ($scope, $http, $mdDialog, popupService) {
     var newgood = {};
-
-    $http.get(`http://localhost:8080/loadprovidergoodtype`)
+    var host = 
+    $http.get(`/loadprovidergoodtype`)
         .then(function successCallback(response) {
             $scope.listProvider = response.data.listProviderName;
             $scope.listGoodType = response.data.listGoodTypeName;
@@ -28,13 +28,11 @@ appComponent.controller('createNewGoodController', function ($scope, $http, $mdD
             providerID: $scope.selectedProvider.id,
             imagePath: $scope.name
         };
-        $http.post(`http://localhost:8080/import/createnewgood`, newgood) 
-            .then(function errorCallback(error) {
-                alert("failed send create new good form !");
-            }, function successCallback(response) {
-//            	response
-            	 $scope.successMessage.delay(1500).fadeOut('slow');
+        $http.post(`/import/createnewgood`, newgood) 
+            .then(function successCallback(response) {
                 alert("Create new good good successfully with :"+ response.data);
+            }, function errorCallback(error) {
+                alert("failed send create new good form !");
             });
         $mdDialog.hide();
     };

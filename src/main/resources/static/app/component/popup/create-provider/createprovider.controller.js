@@ -18,7 +18,7 @@ appComponent.controller('createProviderController', function ($scope, $http, $md
             description: $scope.description
         };
 
-        $http.post(`http://localhost:8080/import/createnewprovider`, newprovider)
+        $http.post(`/import/createnewprovider`, newprovider)
             .then(function successCallback(response) {
                 alert("Create provider success with name " + response.data.providerID)
             }, function errorCallback(response) {

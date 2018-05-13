@@ -5,7 +5,7 @@ appPages.controller('importController', function ($scope, $http, popupService) {
         var code = $scope.code;
         var unit = $scope.unit;
         var price = $scope.price;
-        $http.get(`http://localhost:8080/createGood?name=${name}&type=${type}&code=${code}&unit=${unit}&price=${price}`)
+        $http.get(`/createGood?name=${name}&type=${type}&code=${code}&unit=${unit}&price=${price}`)
             .then(function successCallback(response) {
                 $scope.response = response;
             }, function errorCallback(response) {
@@ -18,7 +18,7 @@ appPages.controller('importController', function ($scope, $http, popupService) {
         var name = $scope.goodTypeName;
         var code = $scope.goodTypeCode;
         var description = $scope.goodTypeDescription;
-        $http.get(`http://localhost:8080/createGoodType?name=${name}&code=${code}&description=${description}`)
+        $http.get(`/createGoodType?name=${name}&code=${code}&description=${description}`)
             .then(function successCallback(response) {
                 alert("Successfull......");
                 $scope.response = response;
@@ -45,9 +45,16 @@ appPages.controller('importController', function ($scope, $http, popupService) {
     $scope.importGoods = function () {
         popupService.openImportGoodPopup();
     };
+    
+    var config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': '*/*'
+            }
+        };
 
     //Get All goods and fill into table
-    $http.get(`http://localhost:8080/getallgoods`)
+    $http.get('/getallgoods')
         .then(function successCallback(response) {
             $scope.getAllGoodsImportPage = response.data.listgoods;
             console.log(response);

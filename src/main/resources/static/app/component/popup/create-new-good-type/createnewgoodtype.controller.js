@@ -15,7 +15,7 @@ appComponent.controller('createNewGoodTypeController', function ($scope, $http, 
             description: $scope.description
         };
 
-        $http.post(`http://localhost:8080/import/createnewgoodtype`, newgoodtype)
+        $http.post(`/import/createnewgoodtype`, newgoodtype)
             .then( function successCallback(response) {
                 alert("Create good type success with name : " + response.data.goodTypeID);
             }, function errorCallback(response) {

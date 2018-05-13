@@ -1,142 +1,143 @@
 <!DOCTYPE html>
 <html ng-app="demoApp">
 <head>
-<title>Stock Management</title>
-<!-- SCROLLS -->
-<!-- load bootstrap and fontawesome via CDN -->
-<link rel="stylesheet"
-	href="css/font-awesome-4.7.0/css/font-awesome.css" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-<!-- Font Awesome -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<!-- Ionicons -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<link
-	href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"
-	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
-<link rel="stylesheet" href="css/dist/css/all.css" />
+    <title>Stock Management</title>
+    <!-- SCROLLS -->
+    <!-- load bootstrap and fontawesome via CDN -->
+    <link rel="stylesheet"
+          href="css/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link
+            href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css"
+            rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <link rel="stylesheet" href="css/dist/css/all.css"/>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
-<script
-	src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.1.0.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script
+            src="http://angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.1.0.js"></script>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
 
-<!-- Angular Material Library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
-<script src="app/app.js"></script>
+    <!-- Angular Material Library -->
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+    <script src="app/app.js"></script>
 </head>
 <body ng-controller="mainController">
 
-	<!-- HEADER AND NAVBAR -->
-	<header></header>
-	<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<!-- HEADER AND NAVBAR -->
+<header></header>
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
 
-	<div class="container">
-		<div class="row">
-			<div class="col-12 header">
-				<nav class="navbar navbar-default">
-					<div class="container">
-						<div class="navbar-header">
-							<p class="navbar-brand">Stock Management</p>
-						</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 header">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <p class="navbar-brand">Stock Management</p>
+                    </div>
 
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-							<li><a href="#!/mystock"><i class="fa fa-simplybuilt"></i>My
-									Stock</a></li>
-							<li><a href="#!/import"><i class="fa fa-comment"></i>Import</a></li>
-							<li><a href="#!/export"><i class="fa fa-shield"></i>
-									Export</a></li>
-						</ul>
-					</div>
-				</nav>
-			</div>
-		</div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="#!/mystock"><i class="fa fa-simplybuilt"></i>My
+                            Stock</a></li>
+                        <li><a href="#!/import"><i class="fa fa-comment"></i>Import</a></li>
+                        <li><a href="#!/export"><i class="fa fa-shield"></i>
+                            Export</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
 
-		<div class="row">
-			<div class="col-xs-12 col-md-6 col-lg-8 main-content flex-column"
-				style="width: 100%">
-				<div id="main">
-					<!-- angular templating -->
-					<!-- this is where content will be injected -->
-					<did ng-view></did>
+    <div class="row">
+        <div class="col-xs-12 col-md-6 col-lg-8 main-content flex-column"
+             style="width: 100%">
+            <div id="main">
+                <!-- angular templating -->
+                <!-- this is where content will be injected -->
+                <did ng-view></did>
 
-					<script src="app/service/popup.service.js"></script>
-					<script src="app/pages/app.pages.js"></script>
+                <script src="app/service/popup.service.js"></script>
+                <script src="app/service/goods.service.js"></script>
+                <script src="app/pages/app.pages.js"></script>
 
-					<script src="app/pages/home/home.component.js"></script>
-					<script src="app/pages/home/home.controller.js"></script>
+                <script src="app/pages/home/home.component.js"></script>
+                <script src="app/pages/home/home.controller.js"></script>
 
-					<script src="app/pages/export/export.component.js"></script>
-					<script src="app/pages/export/export.controller.js"></script>
+                <script src="app/pages/export/export.component.js"></script>
+                <script src="app/pages/export/export.controller.js"></script>
 
-					<script src="app/pages/import/import.component.js"></script>
-					<script src="app/pages/import/import.controller.js"></script>
+                <script src="app/pages/import/import.component.js"></script>
+                <script src="app/pages/import/import.controller.js"></script>
 
-					<script src="app/pages/mystock/mystock.component.js"></script>
-					<script src="app/pages/mystock/mystock.controller.js"></script>
+                <script src="app/pages/mystock/mystock.component.js"></script>
+                <script src="app/pages/mystock/mystock.controller.js"></script>
 
-					<script src="app/component/app.component.js"></script>
+                <script src="app/component/app.component.js"></script>
 
-					<script
-						src="app/component/popup/create-new-good/createnewgood.controller.js"></script>
-					<script
-						src="app/component/popup/create-new-good/createnewgood.component.js"></script>
+                <script
+                        src="app/component/popup/create-new-good/createnewgood.controller.js"></script>
+                <script
+                        src="app/component/popup/create-new-good/createnewgood.component.js"></script>
 
-					<script
-						src="app/component/popup/create-new-good-type/createnewgoodtype.component.js"></script>
-					<script
-						src="app/component/popup/create-new-good-type/createnewgoodtype.controller.js"></script>
+                <script
+                        src="app/component/popup/create-new-good-type/createnewgoodtype.component.js"></script>
+                <script
+                        src="app/component/popup/create-new-good-type/createnewgoodtype.controller.js"></script>
 
-					<script
-						src="app/component/popup/export-good/exportgood.component.js"></script>
-					<script
-						src="app/component/popup/export-good/exportgood.controller.js"></script>
+                <script
+                        src="app/component/popup/export-good/exportgood.component.js"></script>
+                <script
+                        src="app/component/popup/export-good/exportgood.controller.js"></script>
 
-					<script
-						src="app/component/popup/import-good/importgood.component.js"></script>
-					<script
-						src="app/component/popup/import-good/importgood.controller.js"></script>
+                <script
+                        src="app/component/popup/edit-import-good/editimportgood.component.js"></script>
+                <script
+                        src="app/component/popup/edit-import-good/editimportgood.controller.js"></script>
 
-					<script
-						src="app/component/popup/create-provider/createprovider.component.js"></script>
-					<script
-						src="app/component/popup/create-provider/createprovider.controller.js"></script>
+                <script
+                        src="app/component/popup/create-provider/createprovider.component.js"></script>
+                <script
+                        src="app/component/popup/create-provider/createprovider.controller.js"></script>
 
-					<script
-						src="app/component/popup/create-unit/createunit.component.js"></script>
-					<script
-						src="app/component/popup/create-unit/createunit.controller.js"></script>
+                <script
+                        src="app/component/popup/create-unit/createunit.component.js"></script>
+                <script
+                        src="app/component/popup/create-unit/createunit.controller.js"></script>
 
-				</div>
-			</div>
-		</div>
-		<!--     <div class="row"> -->
-		<!--         <footer class="main-footer"> -->
-		<!--             <div class="footer-content"> -->
-		<!--                 <div> -->
-		<!--                     <b>Version</b> 0.0.1 SNAPPSHOT -->
-		<!--                 </div> -->
-		<!--                 <strong>Copyright &copy; RBoy - <a -->
-		<!--                         href="https://www.facebook.com/dtduy15">Dang Thanh Duy</a>. -->
-		<!--                 </strong> All rights reserved. -->
-		<!--             </div> -->
-		<!--         </footer> -->
-		<!--     </div> -->
-	</div>
+            </div>
+        </div>
+    </div>
+    <!--     <div class="row"> -->
+    <!--         <footer class="main-footer"> -->
+    <!--             <div class="footer-content"> -->
+    <!--                 <div> -->
+    <!--                     <b>Version</b> 0.0.1 SNAPPSHOT -->
+    <!--                 </div> -->
+    <!--                 <strong>Copyright &copy; RBoy - <a -->
+    <!--                         href="https://www.facebook.com/dtduy15">Dang Thanh Duy</a>. -->
+    <!--                 </strong> All rights reserved. -->
+    <!--             </div> -->
+    <!--         </footer> -->
+    <!--     </div> -->
+</div>
 </body>
 </html>

@@ -11,6 +11,7 @@ function popupService($mdDialog) {
     service.openCreateNewGoodTypePopup = openCreateNewGoodTypePopup;
     service.openCreateProviderPopup = openCreateProviderPopup;
     service.openCreateNewUnitPopup = openCreateNewUnitPopup;
+    service.openEditGoodPopup = openEditGoodPopup;
 //    service.reloadProvider = reloadProvider;
 //    service.reloadUnit = reloadUnit;
 //    service.reloadGoodType = reloadGoodType;
@@ -27,7 +28,7 @@ function popupService($mdDialog) {
     }
 
     function openImportGoodPopup() {
-        var template = '<import-good></import-good>';
+        var template = '<edit-edit-import-good></edit-edit-import-good>';
         createPopup(template);
     }
 
@@ -77,5 +78,10 @@ function popupService($mdDialog) {
                 cancelCallback();
             }
         });
+    }
+
+    function openEditGoodPopup() {
+        var template = '<edit-import-good></edit-import-good>';
+        createPopup(template);
     }
 };

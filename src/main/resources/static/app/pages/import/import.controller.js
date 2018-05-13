@@ -1,4 +1,4 @@
-appPages.controller('importController', function ($scope, $http, popupService) {
+appPages.controller('importController', function ($scope, $http, popupService, goodsService) {
     $scope.submit = function () {
         var name = $scope.name;
         var type = $scope.type;
@@ -57,10 +57,15 @@ appPages.controller('importController', function ($scope, $http, popupService) {
     $http.get('/getallgoods')
         .then(function successCallback(response) {
             $scope.getAllGoodsImportPage = response.data.listgoods;
+            goodsService.setAllGoods(response.data.listgoods);
             console.log(response);
         }, function errorCallback(response) {
             alert("Cannot get all goods......");
             console.log("Unable to perform get request export");
         });
 
+    $scope.editGoods = function (id) {
+        goodsService.setGoodsById(id);
+        popupService.openEditGoodPopup();
+    }
 });

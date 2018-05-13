@@ -1,5 +1,9 @@
-appComponent.controller('importGoodController', function($scope, $http, $mdDialog) {
+appComponent.controller('editImportGoodController', function($scope, $http, $mdDialog, goodsService) {
 
+    goodsService.getAllGoods();
+    const id = goodsService.getGoodsById();
+    if ( goodsService.getAllGoods().id === id) {
+    }
     $scope.save = function () {
         $http.get(``)
             .then(function successCallback(response){

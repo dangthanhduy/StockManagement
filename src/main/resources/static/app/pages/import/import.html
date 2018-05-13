@@ -47,8 +47,8 @@
                 <td>{{ x.importPrice }}</td>
                 <td>{{ x.exportPrice }}</td>
                 <td>
-                    <a class="fa fa-eye"></a>
-                    <a class="fa fa-edit"></a>
+                    <a class="fa fa-eye" ng-click="view(x.id)"></a>&nbsp;&nbsp;
+                    <a class="fa fa-edit" ng-click="editGoods(x.id)"></a>
                 </td>
             </tr>
         </table>

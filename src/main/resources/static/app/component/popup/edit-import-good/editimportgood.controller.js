@@ -1,9 +1,18 @@
 appComponent.controller('editImportGoodController', function($scope, $http, $mdDialog, goodsService) {
 
-    goodsService.getAllGoods();
+    var listGoods = {};
+    listGoods=	goodsService.getAllGoods();
     const id = goodsService.getGoodsById();
-    if ( goodsService.getAllGoods().id === id) {
+    
+    console.log(id);
+    for(var index in listGoods) { 
+    	if(index == id){
+    		// Get value of object in listGoods	
+    		// listGoods[index].name
+    		$scope.editObject = listGoods[id].name;
+    	}
     }
+   
     $scope.save = function () {
         $http.get(``)
             .then(function successCallback(response){

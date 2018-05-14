@@ -1,7 +1,6 @@
 angular
     .module('demoApp')
     .factory('popupService', popupService);
-
 function popupService($mdDialog) {
     var service = {};
     
@@ -80,8 +79,10 @@ function popupService($mdDialog) {
         });
     }
 
-    function openEditGoodPopup() {
+    function openEditGoodPopup(id) {
         var template = '<edit-import-good></edit-import-good>';
+        
         createPopup(template);
     }
+    
 };

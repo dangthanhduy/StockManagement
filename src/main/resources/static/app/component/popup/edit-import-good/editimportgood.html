@@ -17,7 +17,7 @@
                 <div class="form-group">
                     <label for="goodName" class="control-label">Good's name</label>
                     <div class="input-form">
-                        <input type="text" class="" id="goodName" ng-model="name"
+                        <input type="text" class="" id="goodName" ng-model="editObject	"
                                placeholder="Enter name ...">
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <label class="control-label">Type</label>
                     <div class="">
-                        <select ng-model="selectedTypeName"
+                        <select ng-model="editObject.name"
                                 ng-options="x.goodTypeName for x in listGoodType"
                                 ng-change="showSelect(selectedTypeName)"></select> <a
                             class="create-type-link" ng-click="createNewGoodType()">Create

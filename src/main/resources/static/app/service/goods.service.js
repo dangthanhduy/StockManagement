@@ -12,6 +12,7 @@ function goodsService() {
     return service;
     
     function setAllGoods(listgoods) {
+    	var _listgoods = {};
         this._listgoods = listgoods;
     }
 

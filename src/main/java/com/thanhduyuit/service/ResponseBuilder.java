@@ -11,11 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.thanhduyuit.controller.ImportController;
-import com.thanhduyuit.dao.UnitDao;
 import com.thanhduyuit.entities.Good;
 import com.thanhduyuit.entities.GoodType;
 import com.thanhduyuit.entities.Provider;
 import com.thanhduyuit.entities.Unit;
+import com.thanhduyuit.model.GoodResponse;
 import com.thanhduyuit.model.GoodTypeModel;
 import com.thanhduyuit.model.GoodTypeModelCreate;
 import com.thanhduyuit.model.ProviderModel;
@@ -30,7 +30,6 @@ import com.thanhduyuit.response.GoodTypeListNameResponse;
 import com.thanhduyuit.response.GoodTypeResponse;
 import com.thanhduyuit.response.MessageResponse;
 import com.thanhduyuit.response.ProviderGoodTypeReponse;
-import com.thanhduyuit.response.ProviderResponse;
 
 import Ultilities.Converter;
 import Ultilities.MessageConstants;
@@ -62,7 +61,7 @@ public class ResponseBuilder {
 
 	}
 
-	public GoodStandardResponse getAllGoodBuilder(List<Good> listGood) {
+	public GoodStandardResponse getAllGoodBuilder(List<GoodResponse> listGood) {
 		GoodStandardResponse response = new GoodStandardResponse();
 		if (listGood == null) {
 			log.info("listGood is null");
@@ -78,6 +77,23 @@ public class ResponseBuilder {
 		}
 
 	}
+	
+//	public GoodStandardResponse getAllGoodBuilder2(List<Good> listGood) {
+//		GoodStandardResponse response = new GoodStandardResponse();
+//		if (listGood == null) {
+//			log.info("listGood is null");
+//			response.setStatuscode(500);
+//			response.setMessage("Cannot get list goods...!");
+//			return response;
+//		} else {
+//			response.setStatuscode(200);
+//			response.setMessage("Success");
+//			response.setListgoods(listGood);
+//			log.info("Get ListGoods Success !!!");
+//			return response;
+//		}
+//
+//	}
 
 	public GoodTypeResponse getAllGoodTypeObjectBuilder(List<GoodType> listGoodType) {
 		GoodTypeResponse response = new GoodTypeResponse();

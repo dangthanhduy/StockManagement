@@ -31,18 +31,6 @@ private static final Log log = LogFactory.getLog(ImportController.class);
 	@Autowired
 	private ResponseBuilder responseRuilder;
 	
-	@RequestMapping("/getallgoods")
-	@ResponseBody
-	public GoodStandardResponse getAllGood(HttpServletRequest request, String stockID) throws Exception {
-		//Log client info
-		log.info("------------------Main controller");
-		log.info("Reuqest '/getAllGoods' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
-		GetClientIpInfo.getClientInfo(request);
-		log.info("--------------------------------------------------");
-		return responseRuilder.getAllGoodBuilder(importer.getAllGoods());
-	}
-	
-	
 	@RequestMapping("/getallgoodtypes")
 	@ResponseBody
 	public GoodTypeResponse getAllGoodType(HttpServletRequest request, String stockID) throws Exception {

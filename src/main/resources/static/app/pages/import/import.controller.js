@@ -54,11 +54,10 @@ appPages.controller('importController', function ($scope, $http, popupService, g
         };
 
     //Get All goods and fill into table
-    $http.get('/getallgoods')
+    $http.get(`/import/getallgoods`)
         .then(function successCallback(response) {
             $scope.getAllGoodsImportPage = response.data.listgoods;
             goodsService.setAllGoods(response.data.listgoods);
-//            alert(response.data.listgoods)
             console.log(response);
         }, function errorCallback(response) {
             alert("Cannot get all goods......");

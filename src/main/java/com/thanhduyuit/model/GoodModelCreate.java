@@ -5,6 +5,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class GoodModelCreate {
 
+	private long id;
+
 	private String name;
 
 	private String code;
@@ -20,6 +22,8 @@ public class GoodModelCreate {
 	private String importPrice;
 
 	private String exportPrice;
+
+	private double quantity;
 
 	public GoodModelCreate() {
 		super();
@@ -37,6 +41,21 @@ public class GoodModelCreate {
 		this.providerID = providerID;
 		this.importPrice = importPrice;
 		this.exportPrice = exportPrice;
+	}
+
+	public GoodModelCreate(long id, String name, String code, String type, String unit, String imagePath,
+			String providerID, String importPrice, String exportPrice, double quantity) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.code = code;
+		this.type = type;
+		this.unit = unit;
+		this.imagePath = imagePath;
+		this.providerID = providerID;
+		this.importPrice = importPrice;
+		this.exportPrice = exportPrice;
+		this.quantity = quantity;
 	}
 
 	public String getImportPrice() {
@@ -101,6 +120,22 @@ public class GoodModelCreate {
 
 	public void setProviderID(String providerID) {
 		this.providerID = providerID;
+	}
+
+	public double getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(double quantity) {
+		this.quantity = quantity;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 }

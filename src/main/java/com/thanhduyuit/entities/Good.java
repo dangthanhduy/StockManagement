@@ -97,8 +97,7 @@ public class Good {
 	}
 
 	public Good(long id, String name, String code, String type, String unit, String imagePath, double quantity,
-			double importPrice, double exportPrice, GoodType goodType, Provider provider, Customer customer,
-			Set<Stock> listStock) {
+			double importPrice, double exportPrice, GoodType goodType, Provider provider) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -111,8 +110,6 @@ public class Good {
 		this.exportPrice = exportPrice;
 		this.goodType = goodType;
 		this.provider = provider;
-		this.customer = customer;
-		this.listStock = listStock;
 	}
 
 	public String getImagePath() {

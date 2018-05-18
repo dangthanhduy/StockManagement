@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thanhduyuit.GetClientIpInfo;
 import com.thanhduyuit.model.GoodModelCreate;
+import com.thanhduyuit.model.GoodResponse;
 import com.thanhduyuit.model.GoodTypeModelCreate;
 import com.thanhduyuit.model.ProviderModelCreate;
 import com.thanhduyuit.model.UnitModelCreate;
@@ -40,19 +41,19 @@ public class ImportController {
 	@Autowired
 	private ResponseBuilder responseRuilder;
 
-	@RequestMapping("/getallgood")
+	@RequestMapping("/getallgoods")
 	@ResponseBody
-	public GoodStandardResponse getAllGood(HttpServletRequest request, @RequestBody String stockID) throws Exception {
+	public GoodStandardResponse getAllGoods(HttpServletRequest request, String stockID) throws Exception {
 
 		// Log client info
-		log.info("Reuqest '/getallgood' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		log.info("Reuqest '/getallgoods' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
 		GetClientIpInfo.getClientInfo(request);
 
 		GoodStandardResponse response = new GoodStandardResponse();
-		response = responseRuilder.getAllGoodBuilder(importer.getAllGoods());
+		response = responseRuilder.getAllGoodBuilder(importer.getAllGoodResponse());
 		return response;
 	}
-
+	
 	@RequestMapping(value = "/createnewgood", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public CreateGoodResponse createNewGood(HttpServletRequest request, @RequestBody GoodModelCreate data)
@@ -62,6 +63,17 @@ public class ImportController {
 		log.info("Reuqest '/createnewgood' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
 		GetClientIpInfo.getClientInfo(request);
 		return importer.createNewGood(data);
+	}
+	
+	@RequestMapping(value = "/updategood", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public CreateGoodResponse updateNewGood(HttpServletRequest request, @RequestBody GoodModelCreate data)
+			throws Exception {
+
+		// Log client info
+		log.info("Reuqest '/createnewgood' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+		return importer.updateNewGood(data);
 	}
 	
 	@RequestMapping(value = "/createnewgoodtype", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)

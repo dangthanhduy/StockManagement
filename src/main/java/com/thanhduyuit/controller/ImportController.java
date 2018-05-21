@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thanhduyuit.GetClientIpInfo;
 import com.thanhduyuit.model.GoodModelCreate;
+import com.thanhduyuit.model.GoodModelImport;
 import com.thanhduyuit.model.GoodResponse;
 import com.thanhduyuit.model.GoodTypeModelCreate;
 import com.thanhduyuit.model.ProviderModelCreate;
@@ -24,6 +25,7 @@ import com.thanhduyuit.response.CreateGoodTypeResponse;
 import com.thanhduyuit.response.CreateProviderResponse;
 import com.thanhduyuit.response.CreateUnitResponse;
 import com.thanhduyuit.response.GoodStandardResponse;
+import com.thanhduyuit.response.ImportGoodResponse;
 import com.thanhduyuit.service.ImportService;
 import com.thanhduyuit.service.ResponseBuilder;
 
@@ -48,10 +50,7 @@ public class ImportController {
 		// Log client info
 		log.info("Reuqest '/getallgoods' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
 		GetClientIpInfo.getClientInfo(request);
-
-		GoodStandardResponse response = new GoodStandardResponse();
-		response = responseRuilder.getAllGoodBuilder(importer.getAllGoodResponse());
-		return response;
+		return responseRuilder.getAllGoodBuilder(importer.getAllGoodResponse());
 	}
 	
 	@RequestMapping(value = "/createnewgood", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -107,6 +106,18 @@ public class ImportController {
 		log.info("Reuqest '/createnewunit' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
 		GetClientIpInfo.getClientInfo(request);
 		return importer.createNewUnit(data);
+	}
+	
+	
+	@RequestMapping(value = "/importgood", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public ImportGoodResponse importGoodQuantity(HttpServletRequest request, @RequestBody GoodModelImport data)
+			throws Exception {
+
+		// Log client info
+		log.info("Reuqest '/importgood' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+		return importer.importGood(data);
 	}
 
 }

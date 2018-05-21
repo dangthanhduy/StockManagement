@@ -2,60 +2,45 @@ appComponent.controller('editImportGoodController', function($scope, $http, $mdD
 
     var listGoods = {};
     listGoods=	goodsService.getAllGoods();
-    const id = goodsService.getGoodsById();
+    const goodID = goodsService.getGoodsById();
     
-    $http.get(`/loadprovidergoodtype`)
-    .then(function successCallback(response) {
-        $scope.listProvider = response.data.listProviderName;
-        $scope.listGoodType = response.data.listGoodTypeName;
-        $scope.listUnitType = response.data.listUnitType;
-    }, function errorCallback(response) {
-        alert("Error.....");
-    });
-    
-    console.log(id);
+//    console.log(id);
     for(var index in listGoods) { 
-    	if(index == id){
+    	
+    	if( listGoods[index].id == goodID){
     		// Get value of object in listGoods	
     		// listGoods[index].name
-    		$scope.editName = listGoods[id-1].name;
-    		$scope.selectedTypeName = listGoods[id-1].goodType.decription;
-//    		listGoods[id-1].provider.providerName
-    		$scope.editProvider = '2';
-    		$scope.editCode = listGoods[id-1].code;
-    		$scope.editUnit = listGoods[id-1].unit;
-    		$scope.editPrice = listGoods[id-1].importPrice;
-    		$scope.editExportPrice = listGoods[id-1].exportPrice;
-    		$scope.quantity = listGoods[id-1].quantity;
-    		$scope.editType = listGoods[id-1].goodType.typeName;
-    		$scope.editProvider = listGoods[id-1].provider.providerName;
+    		$scope.editName = listGoods[index].name;
+    		$scope.editCode = listGoods[index].code;
+    		$scope.editUnit = listGoods[index].unit;
+    		$scope.editPrice = listGoods[index].importPrice;
+    		$scope.currentQuatity = listGoods[index].quantity;
     	}
     }
    
     $scope.save = function () {
-
         var config = {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'text/plain'
             }
         };
-        newgood = {
-        	id:goodsService.getGoodsById(),
+        goodupdate = {
             code: $scope.editCode,
-            unit: $scope.editUnit.id,
             importPrice: $scope.editPrice,
-            exportPrice: $scope.editExportPrice,
-            name: $scope.editName,
-            type: $scope.editType.id,
-            providerID: $scope.editProvider.id,
-            quantity : $scope.quantity
+//            exportPrice: $scope.editExportPrice,
+            quantity : $scope.editQuantity
         };
-        $http.post(`/import/createnewgood`, newgood) 
+        $http.post(`/import/importgood`, goodupdate) 
             .then(function successCallback(response) {
-                alert("Create new good good successfully with :"+ response.data);
+            	if(response.data.statuscode === '200'){
+            		 alert(response.data.message);
+            	} else {
+            		 alert(response.data.message);
+            	}
+               
             }, function errorCallback(error) {
-                alert("failed send create new good form !");
+                alert("Import failed! Something wrong!!!");
             });
         $mdDialog.hide();
     };

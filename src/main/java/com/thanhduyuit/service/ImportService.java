@@ -18,6 +18,7 @@ import com.thanhduyuit.entities.GoodType;
 import com.thanhduyuit.entities.Provider;
 import com.thanhduyuit.entities.Unit;
 import com.thanhduyuit.model.GoodModelCreate;
+import com.thanhduyuit.model.GoodModelImport;
 import com.thanhduyuit.model.GoodResponse;
 import com.thanhduyuit.model.GoodTypeModelCreate;
 import com.thanhduyuit.model.ProviderModelCreate;
@@ -26,26 +27,30 @@ import com.thanhduyuit.response.CreateGoodResponse;
 import com.thanhduyuit.response.CreateGoodTypeResponse;
 import com.thanhduyuit.response.CreateProviderResponse;
 import com.thanhduyuit.response.CreateUnitResponse;
+import com.thanhduyuit.response.ImportGoodResponse;
 
 import Ultilities.Converter;
 
 @Service
 public class ImportService {
 
-	private static final Log log = LogFactory.getLog(ImportController.class);
+	private static final Log log = LogFactory.getLog(ImportService.class);
 
 	@Autowired
 	private GoodDao goodDao;
+	
+	@Autowired
+	private StoreLog storeLog;
 
 	@Autowired
 	private GoodTypeDao goodTypeDao;
 
 	@Autowired
 	private ProviderDao providerDao;
-	
+
 	@Autowired
 	private UnitDao unitrDao;
-	
+
 	@Autowired
 	private ResponseBuilder responseRuilder;
 
@@ -57,7 +62,7 @@ public class ImportService {
 	public List<Good> getAllGoods() throws Exception {
 		return (List<Good>) goodDao.findAll();
 	}
-	
+
 	public List<GoodResponse> getAllGoodResponse() {
 		List<Good> listEntities = (List<Good>) goodDao.findAll();
 		List<GoodResponse> response = Converter.goodEntityToGoodResponse(listEntities);
@@ -90,7 +95,7 @@ public class ImportService {
 		}
 		return response;
 	}
-	
+
 	public CreateGoodResponse updateNewGood(GoodModelCreate data) {
 		CreateGoodResponse response = new CreateGoodResponse();
 		try {
@@ -112,8 +117,6 @@ public class ImportService {
 		}
 		return response;
 	}
-	
-	
 
 	public CreateGoodTypeResponse createGoodType(GoodTypeModelCreate data) {
 		GoodType goodtype = new GoodType(data.getTypeName(), data.getCode(), data.getDescription());
@@ -122,15 +125,29 @@ public class ImportService {
 	}
 
 	public CreateProviderResponse createNewProvider(ProviderModelCreate data) {
-		Provider provider = new Provider(data.getProviderName(), data.getPhoneNumber(), data.getAddress(), data.getVote(), data.getDescription());
+		Provider provider = new Provider(data.getProviderName(), data.getPhoneNumber(), data.getAddress(),
+				data.getVote(), data.getDescription());
 		providerDao.save(provider);
 		return responseRuilder.createProviderBuilder(provider);
 	}
-	
+
 	public CreateUnitResponse createNewUnit(UnitModelCreate data) {
-		Unit unit = new Unit(data.getDescription(),data.getUnitName());
+		Unit unit = new Unit(data.getDescription(), data.getUnitName());
 		unitrDao.save(unit);
 		return responseRuilder.createUnitBuilder(unit);
+	}
+
+	public ImportGoodResponse importGood(GoodModelImport data) {
+		Good goodNeedToUpdate = goodDao.getGoodByCode(data.getCode());
+		double quantityChange = data.getQuantity();
+		if (quantityChange > 0) {
+//			goodNeedToUpdate.setExportPrice(data.getExportPrice());
+			goodNeedToUpdate.setImportPrice(data.getImportPrice());
+			goodNeedToUpdate.setQuantity(goodNeedToUpdate.getQuantity() + quantityChange);
+			goodDao.save(goodNeedToUpdate);
+			storeLog.storeImportLog(data, goodNeedToUpdate, quantityChange);
+		}
+		return responseRuilder.importGoodBuilder(quantityChange);
 	}
 
 }

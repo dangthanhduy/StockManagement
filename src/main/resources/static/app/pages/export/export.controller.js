@@ -1,4 +1,4 @@
-appPages.controller('exportController', function($scope, $http, popupService) {
+appPages.controller('exportController', function($scope, $http, popupService, goodsService) {
 
 	
 	//Export Good button click
@@ -9,14 +9,27 @@ appPages.controller('exportController', function($scope, $http, popupService) {
 	
 	
 	
-	//Get all good load into table
-    // $http.get(`http://localhost:8080/getallgoods`)
-     //    .then(function successCallback(response){
-     //        $scope.getAllGoods = response.data.listgoods;
-     //        console.log(response);
-     //    }, function errorCallback(response){
-     //        alert("Cannot get all goods......");
-     //        console.log("Unable to perform get request export");
-     //    });
+//	Get all good load into table
+     $http.get(`/import/getallgoods`)
+         .then(function successCallback(response){
+             $scope.getAllGoods = response.data.listgoods;
+             goodsService.setAllGoods(response.data.listgoods);
+             console.log(response);
+         }, function errorCallback(response){
+             alert("Cannot get all goods......");
+             console.log("Unable to perform get request export");
+         });
+     
+     
+     $scope.exportGood = function (id) {
+         goodsService.setGoodsById(id);
+         popupService.openExportGoodPopup();
+           
+       }
+     
+     
+     
+     
+     
 
 });

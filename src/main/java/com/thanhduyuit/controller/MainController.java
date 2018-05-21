@@ -21,7 +21,7 @@ import com.thanhduyuit.service.ResponseBuilder;
 @Controller
 public class MainController {
 
-private static final Log log = LogFactory.getLog(ImportController.class);
+private static final Log log = LogFactory.getLog(MainController.class);
 	
 	private static final String X_FORWARDED_FOR  = "X-FORWARDED-FOR";
 	
@@ -75,5 +75,7 @@ private static final Log log = LogFactory.getLog(ImportController.class);
 		log.info("--------------------------------------------------");
 		return responseRuilder.getAllProviderAndGoodType();
 	}
+	
+	
 
 }

@@ -1,12 +1,17 @@
 package Ultilities;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
+import com.thanhduyuit.entities.ActivityLog;
 import com.thanhduyuit.entities.Good;
 import com.thanhduyuit.entities.GoodType;
 import com.thanhduyuit.entities.Provider;
 import com.thanhduyuit.entities.Unit;
+import com.thanhduyuit.model.ActivityLogModel;
 import com.thanhduyuit.model.GoodModelCreate;
 import com.thanhduyuit.model.GoodResponse;
 import com.thanhduyuit.model.GoodTypeModelCreate;
@@ -54,6 +59,17 @@ public class Converter {
 			goodResponse.setType(good.getType());
 			goodResponse.setUnit(good.getUnit());
 			response.add(goodResponse);
+		}
+		return response;
+	}
+	
+	public static List<ActivityLogModel> activityLogEntitytoModel(List<ActivityLog> listEntities) {
+		List<ActivityLogModel> response = new ArrayList<>();
+		DateFormat dateFormat = new SimpleDateFormat("HH:mm dd-MM-yyyy");
+		for (ActivityLog entity : listEntities){
+			String dateOfData = dateFormat.format(entity.getDate()).toString();
+			ActivityLogModel model = new ActivityLogModel(dateOfData, entity.getActionType(), entity.getGoodName(), entity.getGoodCode(), entity.getImportPrice(), entity.getExportPrice(), entity.getQuantity(), entity.getProviderName(), entity.getCustomerName());
+			response.add(model);
 		}
 		return response;
 	}

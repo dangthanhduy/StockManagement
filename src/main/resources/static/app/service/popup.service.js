@@ -80,8 +80,12 @@ function popupService($mdDialog) {
     }
 
     function openEditGoodPopup(id) {
-        var template = '<edit-import-good></edit-import-good>';
-        
+        var template = '<edit-import-good></edit-import-good>';        
+        createPopup(template);
+    }
+    
+    function openExportGoodPopup(id) {
+        var template = '<export-good></export-good>';
         createPopup(template);
     }
     

@@ -1,96 +1,56 @@
 <div class="modal-header">
-    <h1>Create new good</h1>
+	<h1>Import good</h1>
 </div>
 <div class="modal-body">
-    <div class="box box-primary">
-        <!--<div class="box-header with-border">-->
-        <!--<h3 class="box-title"></h3>-->
-        <!--</div>-->
-        <form class="create-form">
-            <div class="pull-left">
-                <div ng-model="successMessage"
-                     class="container alert alert-success fade in "
-                     style="display: none; text-align: center; weight: 50%">
-                    <a href="" class="close" data-dismiss="alert">&times;</a> <strong>Success!</strong>
-                    Save Successfully!
-                </div>
-                <div class="form-group">
-                    <label for="goodName" class="control-label">Good's name</label>
-                    <div class="input-form">
-                        <input type="text" class="" id="goodName" ng-model="editName"
-                               placeholder="Enter name ...">
-                    </div>
-                </div>
+	<div class="box box-primary">
+		<!--<div class="box-header with-border">-->
+		<!--<h3 class="box-title"></h3>-->
+		<!--</div>-->
+		<form class="create-form">
+			<div class="pull-left">
+				<!--                 <div ng-model="successMessage"  -->
+				<!--                      class="container alert alert-success fade in " -->
+				<!--                      style="display: none; text-align: center; weight: 50%"> -->
+				<!--                     <a href="" class="close" data-dismiss="alert">&times;</a> <strong>Success!</strong> -->
+				<!--                     Save Successfully! -->
+				<!--                 </div> -->
+				<div class="form-group">
+					<label for="goodName" class="control-label">Good's name</label>
+					<div class="input-form">
+						<input type="text" class="" id="goodName" ng-model="editName"
+							ng-disabled="true" placeholder="Enter name ...">
+					</div>
+				</div>
 
-                <div class="form-group">
-                    <label class="control-label">Type</label>
-                    <div class="">
-                        <select ng-model="editType"
-                                ng-options="x.goodTypeName for x in listGoodType"
-                                ng-change="showSelect(selectedTypeName)"></select> <a
-                            class="create-type-link" ng-click="createNewGoodType()">Create
-                        New Good Type</a>
-                    </div>
-                </div>
+				<div class="form-group">
+					<label for="goodCode" class="control-label">Code</label>
+					<div class="input-form">
+						<input type="text" class="" id="goodCode" ng-model="editCode"
+							ng-disabled="true" placeholder="Enter code ...">
+					</div>
+				</div>
 
-                <div class="form-group">
-                    <label class="control-label">Provider</label>
-                    <div class="">
-                        <select ng-model="editProvider"
-                                ng-options="x.providerName for x in listProvider"
-                                ng-change="showSelect(selectedProvider)"
-                                ng-init="editProvider='1'"></select> <a
-                            class="create-type-link" ng-click="createProvider()">Create
-                        New Provider</a>
-                    </div>
-                </div>
+				<div class="form-group">
+					<label for="goodPrice" class="control-label">Import Price</label>
+					<div class="input-form">
+						<input type="text" class="" id="goodPrice" ng-model="editPrice"
+							placeholder="Enter price ...">
+					</div>
+				</div>
 
-                <div class="form-group">
-                    <label for="goodCode" class="control-label">Code</label>
-                    <div class="input-form">
-                        <input type="text" class="" id="goodCode" ng-model="editCode"
-                               placeholder="Enter code ...">
-                    </div>
-                </div>
+				<div class="form-group">
+					<label for="quantity" class="control-label">Quantity to import (Remain: {{currentQuatity}})</label>
+					<div class="input-form">
+						<input type="text" class="" id="quantity" ng-model="editQuantity"
+							placeholder="Enter Quantity ...">
+					</div>
+				</div>
 
-                <div class="form-group">
-                    <label class="control-label">Unit</label> <select
-                        ng-model="editUnit"
-                        ng-options="x.unitName for x in listUnitType"
-                        ng-change="showSelect(selectedUnit)"></select> <a
-                        class="create-type-link" ng-click="createUnit()">Create
-                    New Unit</a>
-                </div>
-
-                <div class="form-group">
-                    <label for="goodPrice" class="control-label">Import Price</label>
-                    <div class="input-form">
-                        <input type="text" class="" id="goodPrice" ng-model="editPrice"
-                               placeholder="Enter price ...">
-                    </div>
-                </div>
-                
-                 <div class="form-group">
-                    <label for="goodExportPrice" class="control-label">Export Price</label>
-                    <div class="input-form">
-                        <input type="text" class="" id="goodExportPrice" ng-model="editExportPrice"
-                               placeholder="Enter price ...">
-                    </div>
-                </div>
-                
-                 <div class="form-group">
-                    <label for="quantity" class="control-label">Quantity</label>
-                    <div class="input-form">
-                        <input type="text" class="" id="quantity" ng-model="quantity"
-                               placeholder="Enter Quantity ...">
-                    </div>
-                </div>
-
-            </div>
-        </form>
-    </div>
+			</div>
+		</form>
+	</div>
 </div>
 <div class="modal-footer">
-    <button ng-click="cancel()" class="btn">Cancel</button>
-    <button ng-click="save()" class="btn btn-primary">Save</button>
+	<button ng-click="cancel()" class="btn">Cancel</button>
+	<button ng-click="save()" class="btn btn-primary">Save</button>
 </div>

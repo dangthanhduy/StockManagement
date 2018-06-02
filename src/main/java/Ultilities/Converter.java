@@ -73,5 +73,16 @@ public class Converter {
 		}
 		return response;
 	}
+	
+	public static ActivityLogModel activityLogEntitytoModel(ActivityLog entity) {
+		if (entity != null) {
+			DateFormat dateFormat = new SimpleDateFormat("HH:mm dd-MM-yyyy");
+			String dateOfData = dateFormat.format(entity.getDate()).toString();
+			ActivityLogModel model = new ActivityLogModel(dateOfData, entity.getActionType(), entity.getGoodName(), entity.getGoodCode(), entity.getImportPrice(), entity.getExportPrice(), entity.getQuantity(), entity.getProviderName(), entity.getCustomerName());
+			return model;
+		}
+		return null;
+		
+	}
 
 }

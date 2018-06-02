@@ -6,10 +6,12 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.thanhduyuit.GetClientIpInfo;
+import com.thanhduyuit.model.FilterModel;
 import com.thanhduyuit.response.GoodStandardResponse;
 import com.thanhduyuit.response.StockLogResponse;
 import com.thanhduyuit.service.ImportService;
@@ -40,6 +42,19 @@ public class MyStockController {
 
 		StockLogResponse response = new StockLogResponse();
 		response = responseRuilder.getAllActivityLog(storeLogService.getAllStoreActivity());
+		return response;
+	}
+	
+	@RequestMapping("/filter")
+	@ResponseBody
+	public StockLogResponse filter(HttpServletRequest request, @RequestBody FilterModel filterModel) throws Exception {
+
+		// Log client info
+		log.info("Reuqest '/filter' is calling from client with IP : " + request.getHeader(X_FORWARDED_FOR));
+		GetClientIpInfo.getClientInfo(request);
+
+		StockLogResponse response = new StockLogResponse();
+		response = responseRuilder.getFilterActivityLog(storeLogService.filterStoreActivity(filterModel));
 		return response;
 	}
 

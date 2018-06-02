@@ -21,4 +21,28 @@ appPages.controller('mystockController', function($scope, $http) {
 //      { name: 'Rainbow', fish: 'Variety', tastiness: 6 }
 //    ];
     
+    
+    $scope.submitFilter = function () {
+    	var config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'text/plain'
+                }
+            };
+    	filterModel = {
+                code: $scope.codeFilter,
+                name: $scope.nameFilter,
+                fromDate: $scope.fromDateFilter,
+                toDate: $scope.toDateFilter,
+                type: $scope.selectedTypeFilter
+            };
+            $http.post(`/mystock/filter`, filterModel) 
+                .then(function successCallback(response) {
+                	$scope.getAllLog = response.data.listLog;
+                }, function errorCallback(error) {
+                    alert("Filter failed");
+                });
+       
+    };
+    
 });

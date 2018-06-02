@@ -98,6 +98,24 @@ public class ResponseBuilder {
 		}
 
 	}
+	
+	public StockLogResponse getFilterActivityLog(List<ActivityLogModel> listActivity) {
+		StockLogResponse response = new StockLogResponse();
+		if (listActivity == null || listActivity.isEmpty()) {
+			log.info("listGood is null");
+			response.setStatuscode(500);
+			response.setMessage("No result found....!");
+			return response;
+		} else {
+			response.setStatuscode(200);
+			response.setMessage("Success");
+			response.setListLog(listActivity);
+			log.info("Get ListGoods Success !!!");
+			return response;
+		}
+	}
+	
+	
 
 	public GoodTypeResponse getAllGoodTypeObjectBuilder(List<GoodType> listGoodType) {
 		GoodTypeResponse response = new GoodTypeResponse();

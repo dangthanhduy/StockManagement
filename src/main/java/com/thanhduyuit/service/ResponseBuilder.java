@@ -33,6 +33,7 @@ import com.thanhduyuit.response.GoodTypeResponse;
 import com.thanhduyuit.response.ImportGoodResponse;
 import com.thanhduyuit.response.MessageResponse;
 import com.thanhduyuit.response.ProviderGoodTypeReponse;
+import com.thanhduyuit.response.StaticLogModelResponse;
 import com.thanhduyuit.response.StockLogResponse;
 
 import Ultilities.Converter;
@@ -112,6 +113,20 @@ public class ResponseBuilder {
 			response.setListLog(listActivity);
 			log.info("Get ListGoods Success !!!");
 			return response;
+		}
+	}
+	
+	public StaticLogModelResponse getFilterActivityLogCount(StaticLogModelResponse model) {
+		if (model.getListLog() == null || model.getListLog().isEmpty()) {
+			log.info("listGood is null");
+			model.setStatuscode(500);
+			model.setMessage("No result found....!");
+			return model;
+		} else {
+			model.setStatuscode(200);
+			model.setMessage("Success");
+			log.info("Get ListGoods Success !!!");
+			return model;
 		}
 	}
 	

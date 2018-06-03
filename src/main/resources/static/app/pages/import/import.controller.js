@@ -14,6 +14,8 @@ appPages.controller('importController', function ($scope, $http, popupService, g
             });
     };
 
+    $scope.searchDataImport   = '';     // set the default search/filter term
+    
     $scope.submitGoodType = function () {
         var name = $scope.goodTypeName;
         var code = $scope.goodTypeCode;

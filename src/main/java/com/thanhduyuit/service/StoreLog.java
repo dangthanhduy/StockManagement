@@ -16,6 +16,7 @@ import com.thanhduyuit.model.ActivityLogModel;
 import com.thanhduyuit.model.FilterModel;
 import com.thanhduyuit.model.GoodModelExport;
 import com.thanhduyuit.model.GoodModelImport;
+import com.thanhduyuit.response.StaticLogModelResponse;
 
 import Ultilities.Converter;
 import Ultilities.DateUtil;
@@ -52,8 +53,11 @@ public class StoreLog {
 		return response;
 	}
 
-	public List<ActivityLogModel> filterStoreActivity(FilterModel filterModel) {
+	public StaticLogModelResponse filterStoreActivity(FilterModel filterModel) {
+		StaticLogModelResponse response = new StaticLogModelResponse();
 		List<ActivityLog> listEntities = (List<ActivityLog>) logDao.findAll();
+		double totalImport = 0;
+		double totalExport = 0;
 		
 		String codeParam = filterModel.getCode();
 		String nameParam = filterModel.getName();
@@ -65,12 +69,9 @@ public class StoreLog {
 			 log.info("Filter with CODE");
 			 listEntities.removeIf(b -> !b.getGoodCode().equalsIgnoreCase(codeParam));
 		}
-		if (nameParam != null && !nameParam.isEmpty() && codeParam == null  || codeParam.isEmpty()) {
+		if (nameParam != null && !nameParam.isEmpty() && (codeParam == null  || codeParam.isEmpty())) {
 			 log.info("Filter with NAME");
 			 listEntities.removeIf(b -> !b.getGoodName().equalsIgnoreCase(nameParam));
-		}
-		if (typeParam != null && !typeParam.isEmpty() && !typeParam.equalsIgnoreCase("ALL")) {
-			listEntities.removeIf(b -> !b.getActionType().equalsIgnoreCase(typeParam));
 		}
 		if (fromDateParam != null) {
 			 log.info("Filter with fromDateParam");
@@ -81,10 +82,25 @@ public class StoreLog {
 			 Date toDateParamNext = DateUtil.addDays(toDateParam, 1);
 			 listEntities.removeIf(b -> b.getDate().after(toDateParamNext));
 		}
+		if (typeParam != null && !typeParam.isEmpty() && !typeParam.equalsIgnoreCase("ALL")) {
+			listEntities.removeIf(b -> !b.getActionType().equalsIgnoreCase(typeParam));
+		}
 		
-		List<ActivityLogModel> listAllModels = Converter.activityLogEntitytoModel(listEntities);
+		List<ActivityLogModel> listModels = Converter.activityLogEntitytoModel(listEntities);
+		for(ActivityLogModel model : listModels) {
+			if (model.getActionType().equalsIgnoreCase("IMPORT")) {
+				totalImport = totalImport + model.getImportPrice()*model.getQuantity();
+			}
+			if (model.getActionType().equalsIgnoreCase("EXPORT")) {
+				totalExport = totalExport + model.getExportPrice()*model.getQuantity();
+			}
+		}
 		
-		return listAllModels;
+		response.setListLog(listModels);
+		response.setTotalImport(totalImport);
+		response.setTotalExport(totalExport);
+		
+		return response;
 	}
 
 }

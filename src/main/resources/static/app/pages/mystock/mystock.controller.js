@@ -39,6 +39,19 @@ appPages.controller('mystockController', function($scope, $http) {
             $http.post(`/mystock/filter`, filterModel) 
                 .then(function successCallback(response) {
                 	$scope.getAllLog = response.data.listLog;
+                	$scope.totalView = response.data.totalExport - response.data.totalImport;
+                	if ($scope.totalView > 0) {
+                		$scope.totalStyle={'color':'green'};
+                	} else {
+                		if ($scope.totalView == 0) {
+                			$scope.totalStyle={'color': 'orange'};
+                		} else {
+                			$scope.totalStyle={'color':'red'};
+                		}
+                	}
+                		$scope.importView = response.data.totalImport;
+                		$scope.exportView = response.data.totalExport;
+                	
                 }, function errorCallback(error) {
                     alert("Filter failed");
                 });
